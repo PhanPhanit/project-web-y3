@@ -3,6 +3,7 @@ import Category from './Category';
 import Home from './Home';
 import Profile from './Profile';
 import ViewBook from './ViewBook';
+import Error from './Error';
 
 
 export {
@@ -10,5 +11,6 @@ export {
     Category,
     Home,
     Profile,
-    ViewBook
+    ViewBook,
+    Error
 }

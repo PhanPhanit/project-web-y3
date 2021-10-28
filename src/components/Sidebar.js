@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Category() {
+function Sidebar() {
     return (
         <div>
-            Category
+            sidebar
         </div>
     )
 }
 
-export default Category
+export default Sidebar

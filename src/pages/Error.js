@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Category() {
+function Error() {
     return (
         <div>
-            Category
+            Error page
         </div>
     )
 }
 
-export default Category
+export default Error

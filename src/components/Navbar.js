@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Category() {
+function Navbar() {
     return (
         <div>
-            Category
+            navbar
         </div>
     )
 }
 
-export default Category
+export default Navbar

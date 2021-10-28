@@ -1,27 +1,33 @@
 import './App.css';
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {CartPage, Category, Home, Profile, ViewBook} from './pages';
-
+import {CartPage, Category, Home, Profile, ViewBook, Error} from './pages';
+import {Navbar, Sidebar, Footer} from './components';
 
 function App() {
   return (
     <Router>
+      <Navbar />
+      <Sidebar />
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
-        <Route to="/categories">
+        <Route path="/categories/:menuName">
           <Category />
         </Route>
-        <Route to="/cart">
+        <Route path="/cart">
           <CartPage />
         </Route>
-        <Route to="/profile">
+        <Route path="/profile">
           <Profile />
         </Route>
-        <Route to="/viewbook/:id" children={<ViewBook />}></Route>
+        <Route path="/viewbook/:id" children={<ViewBook />}></Route>
+        <Route path="*">
+          <Error />
+        </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
