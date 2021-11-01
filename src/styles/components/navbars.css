@@ -1,0 +1,85 @@
+nav{
+    width: 100%;
+    background-color: var(--color-nav);
+}
+nav .wrapper-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .wrapper-menu .left-menu,
+nav .wrapper-menu .right-menu{
+    display: flex;
+    align-items: center;
+}
+nav .wrapper-menu .left-menu .logo font:nth-child(1){
+    color: var(--color-primary);
+    font-size: 3rem;
+    font-weight: 700;
+}
+nav .wrapper-menu .left-menu .logo font:nth-child(2){
+    color: var(--color-text);
+    font-size: 1.8rem;
+    opacity: 0.8;
+    font-weight: 700;
+}
+nav .wrapper-menu .left-menu .logo font:nth-child(3){
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+nav .wrapper-menu .left-menu .frm-search{
+    margin-left: 3rem;
+    width: 200px;
+}
+nav .wrapper-menu .left-menu .frm-search div{
+    width: 100%;
+    position: relative;
+}
+nav .wrapper-menu .left-menu .frm-search div input{
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: var(--color-text);
+    opacity: 1;
+}
+nav .wrapper-menu .left-menu .frm-search div input:focus {
+    border-color: var(--color-primary);
+}
+nav .wrapper-menu .left-menu .frm-search div .icon{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    cursor: pointer;
+}
+.left-menu .frm-search div input:focus ~ .icon{
+    color: var(--color-primary);
+}
+
+
+/* center menu */
+ nav .center-menu ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ nav .center-menu ul li{
+     margin-left: 35px;
+ }
+ nav .center-menu ul li a{
+     color: var(--color-text);
+     opacity: 0.8;
+     font-size: 20px;
+     font-weight: 500;
+ }
+ nav .center-menu ul .dropbox{
+     display: none;
+ }
