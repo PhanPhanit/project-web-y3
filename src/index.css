@@ -31,7 +31,7 @@ a{
   background-color: var(--color-popup);
 }
 .wrapper-global{
-  width: 80%;
+  max-width: 1500px;
   margin: 0 auto;
 }
 .font-khmer{

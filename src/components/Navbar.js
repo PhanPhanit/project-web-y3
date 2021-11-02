@@ -7,7 +7,7 @@ import {NavbarData} from './utils/NavbarData';
 
 function Navbar() {
     return (
-        <nav>
+        <header>
             <div className="wrapper-global wrapper-menu font-khmer">
                 <div className="left-menu">
                     <div className="logo">
@@ -16,22 +16,25 @@ function Navbar() {
                     <form className="frm-search">
                         <div>
                             <input type="text" placeholder="Explore" />
-                            <AiOutlineSearch className="icon" />
+                            <button type="submit">
+                                <AiOutlineSearch className="icon" />
+                            </button>
                         </div>
                     </form>
                 </div>
-                <div className="center-menu">
+                <nav className="center-menu">
                     <ul>
                         {
                             NavbarData.map((menu)=>{
                                 const {id, title, link} = menu;
                                 if(link==='dropbox'){
                                     return (
-                                        <li key={id}>
+                                        <li key={id} className="m-hover">
                                             <a>{title}</a>
                                             <div className="dropbox">
+                                                <div className="arrow-top"></div>
                                                 <span>English</span>
-                                                <span>Khmerកខសដថឹេ</span>
+                                                <span>Khmer</span>
                                             </div>
                                         </li>
                                     );
@@ -44,7 +47,7 @@ function Navbar() {
                             })
                         }
                     </ul>
-                </div>
+                </nav>
                 <div className="right-menu">
                     <div className="user-wrapper">
                         <FaUserAlt />
@@ -55,7 +58,7 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-        </nav>
+        </header>
     )
 }
 
