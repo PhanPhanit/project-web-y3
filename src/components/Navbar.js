@@ -49,13 +49,17 @@ function Navbar() {
                     </ul>
                 </nav>
                 <div className="right-menu">
-                    <div className="user-wrapper">
-                        <FaUserAlt />
-                    </div>
-                    <div className="cart-wrapper">
-                        <AiOutlineShopping />
-                        <span>0</span>
-                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <FaUserAlt />
+                            </div>
+                        </li>
+                        <li>
+                            <AiOutlineShopping />
+                            <span>0</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>

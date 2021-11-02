@@ -12,8 +12,8 @@ header .wrapper-menu{
     justify-content: space-between;
     align-items: center;
 }
-header .wrapper-menu .left-menu,
-header .wrapper-menu .right-menu{
+header .left-menu,
+header .right-menu{
     display: flex;
     align-items: center;
 }
@@ -132,3 +132,49 @@ header .center-menu ul{
  header .center-menu ul .dropbox{
      display: none;
  }
+
+/* left menu */
+
+header .right-menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .right-menu ul li{
+    padding: 18px 20px;
+    font-size: 22px;
+}
+header .right-menu ul li:nth-child(1) div{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-nav);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+header .right-menu ul li:nth-child(2){
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+header .right-menu ul li:nth-child(2) span{
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+    background: var(--color-discount);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
