@@ -19,7 +19,7 @@ header .right-menu{
 }
 header .logo font:nth-child(1){
     color: var(--color-primary);
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
 }
 header .logo font:nth-child(2){
@@ -47,7 +47,8 @@ header .left-menu .frm-search div input{
     border: 2px solid rgba(0, 0, 0, 0.5);
     outline: none;
     border-radius: 10px;
-    padding: 5px;
+    padding: 8px;
+    padding-right: 30px;
     color: var(--color-text);
     opacity: 1;
 }
@@ -99,7 +100,9 @@ header .center-menu ul{
  header .center-menu ul li.m-hover:hover .dropbox{
     display: flex;
  }
- header .dropbox .arrow-top{
+ header .dropbox .arrow-top,
+ header .right-menu .user-icon .user-hower .arrow-top
+ {
     position: absolute;
     top: 0;
     left: 50%;
@@ -133,7 +136,7 @@ header .center-menu ul{
      display: none;
  }
 
-/* left menu */
+/* right menu */
 
 header .right-menu ul{
     display: flex;
@@ -144,16 +147,34 @@ header .right-menu ul li{
     padding: 18px 20px;
     font-size: 22px;
 }
-header .right-menu ul li:nth-child(1) div{
+header .right-menu ul li:nth-child(1) .user-icon{
     width: 38px;
     height: 38px;
     border-radius: 50%;
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-nav);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+header .right-menu .user-icon .user-hower{
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background-color: red;
+    padding: 15px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+}
+header .right-menu .user-icon:hover .user-hower{
+    display: flex;
 }
 header .right-menu ul li:nth-child(2){
     font-size: 35px;

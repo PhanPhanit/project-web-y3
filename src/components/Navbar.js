@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineShopping} from 'react-icons/ai';
+import {FiLogOut} from 'react-icons/fi';
 import {FaUserAlt} from 'react-icons/fa';
 import '../styles/components/navbars.css';
 import {NavbarData} from './utils/NavbarData';
@@ -51,8 +52,23 @@ function Navbar() {
                 <div className="right-menu">
                     <ul>
                         <li>
-                            <div>
+                            <div className="user-icon">
                                 <FaUserAlt />
+                                <div className="user-hower">
+                                    <div className="arrow-top"></div>
+                                    <div className="header">
+                                        <h2>Phan Phanit</h2>
+                                        <span>phanit12@gmail.com</span>
+                                    </div>
+                                    <div className="body">
+                                        <span>My Profile</span>
+                                        <span>History</span>
+                                    </div>
+                                    <div className="footer">
+                                        <Link to="/" className="btn btn-logout">Logout</Link>
+                                        <FiLogOut />
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li>
