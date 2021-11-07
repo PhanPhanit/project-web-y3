@@ -6,7 +6,6 @@ import { Navbar, Sidebar, Footer } from "./components";
 
 function App() {
   return (
-    // dsfewfewfew
     <Router>
       <Navbar />
       <Sidebar />
