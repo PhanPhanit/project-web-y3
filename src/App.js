@@ -1,11 +1,12 @@
-import './App.css';
-import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {CartPage, Category, Home, Profile, ViewBook, Error} from './pages';
-import {Navbar, Sidebar, Footer} from './components';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { CartPage, Category, Home, Profile, ViewBook, Error } from "./pages";
+import { Navbar, Sidebar, Footer } from "./components";
 
 function App() {
   return (
+    // dsfewfewfew
     <Router>
       <Navbar />
       <Sidebar />
@@ -31,6 +32,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
