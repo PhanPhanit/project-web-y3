@@ -24,7 +24,6 @@ function App() {
         </Route>
         <Route path="/viewbook/:id" children={<ViewBook />}></Route>
         <Route path="*">
-          Hii
           <Error />
         </Route>
       </Switch>

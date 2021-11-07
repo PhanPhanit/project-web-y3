@@ -9,6 +9,7 @@ import {NavbarData} from './utils/NavbarData';
 function Navbar() {
     return (
         <header>
+            {/* Header */}
             <div className="wrapper-global wrapper-menu font-khmer">
                 <div className="left-menu">
                     <div className="logo">
@@ -23,6 +24,7 @@ function Navbar() {
                         </div>
                     </form>
                 </div>
+                {/* Center menu */}
                 <nav className="center-menu">
                     <ul>
                         {
@@ -49,6 +51,7 @@ function Navbar() {
                         }
                     </ul>
                 </nav>
+                {/* right menu */}
                 <div className="right-menu">
                     <ul>
                         <li>
