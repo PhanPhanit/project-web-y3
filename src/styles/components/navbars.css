@@ -18,6 +18,9 @@ header .right-menu{
     display: flex;
     align-items: center;
 }
+
+/* logo */
+
 header .logo font:nth-child(1){
     color: var(--color-primary);
     font-size: 2.8rem;
@@ -34,6 +37,11 @@ header .logo font:nth-child(3){
     font-size: 2rem;
     font-weight: 700;
 }
+
+/* end logo */
+
+/* search form */
+
 
 header .left-menu .frm-search{
     margin-left: 3rem;
@@ -75,6 +83,7 @@ header .frm-search div input:focus ~ button .icon{
     color: var(--color-primary);
 }
 
+/* end search form */
 
 /* center menu */
 
@@ -92,6 +101,9 @@ header .center-menu ul{
      position: relative;
      
  }
+
+ /* dropbox language */
+
  header .center-menu ul li.m-hover .dropbox{
     position: absolute;
     top: 100%;
@@ -140,6 +152,8 @@ header .center-menu ul{
      display: none;
  }
 
+ /* end center menu */
+
 /* right menu */
 
 header .right-menu ul{
@@ -163,6 +177,11 @@ header .right-menu ul li:nth-child(1) .user-icon{
     align-items: center;
     cursor: pointer;
 }
+
+/* end right menu */
+
+/* user hover */
+
 header .right-menu .user-icon .user-hower{
     position: absolute;
     top: 130%;
@@ -170,16 +189,60 @@ header .right-menu .user-icon .user-hower{
     transform: translateX(-50%);
     display: none;
     background-color: red;
+    color: var(--color-text);
     padding: 15px;
     border-radius: 8px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     width: 300px;
+    cursor: auto;
 }
 header .right-menu .user-icon:hover .user-hower{
     display: flex;
 }
+header .right-menu .user-icon .user-hower .header{
+    width: 100%;
+}
+header .right-menu .user-icon .user-hower .header h4{
+    font-size: 1.8rem;
+}
+header .right-menu .user-hower .header span{
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+header .right-menu .user-hower .body{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+header .right-menu .user-hower .body .link{
+    margin-top: 15px 0;
+    transition: 0.2s;
+    color: var(--color-text);
+}
+header .right-menu .user-hower .body .link:hover{
+    color: var(--color-primary)
+}
+header .right-menu .user-hower .footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .right-menu .user-hower .logout-txt{
+    color: var(--color-text);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+header .right-menu .user-hower .logout-txt:hover{
+    color: var(--color-discount);
+}
+
+
+/* end user hover */
+
 header .right-menu ul li:nth-child(2){
     font-size: 35px;
     display: flex;

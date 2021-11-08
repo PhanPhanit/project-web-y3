@@ -15,6 +15,7 @@ function Navbar() {
                     <div className="logo">
                         <Link to="/"><font>W</font><font>s</font><font>book</font> </Link>
                     </div>
+                    {/* form search */}
                     <form className="frm-search">
                         <div>
                             <input type="text" placeholder="Explore" />
@@ -24,7 +25,9 @@ function Navbar() {
                         </div>
                     </form>
                 </div>
+
                 {/* Center menu */}
+
                 <nav className="center-menu">
                     <ul>
                         {
@@ -51,27 +54,35 @@ function Navbar() {
                         }
                     </ul>
                 </nav>
+
                 {/* right menu */}
+
                 <div className="right-menu">
                     <ul>
                         <li>
                             <div className="user-icon">
                                 <FaUserAlt />
+
+                                {/* user hover */}
+
                                 <div className="user-hower">
                                     <div className="arrow-top"></div>
                                     <div className="header">
-                                        <h2>Phan Phanit</h2>
+                                        <h4>Phan Phanit</h4>
                                         <span>phanit12@gmail.com</span>
                                     </div>
                                     <div className="body">
-                                        <span>My Profile</span>
-                                        <span>History</span>
+                                        <Link className="link" to="/profile">My Profile</Link>
+                                        <Link className="link" to="/profile">History</Link>
                                     </div>
                                     <div className="footer">
-                                        <Link to="/" className="btn btn-logout">Logout</Link>
-                                        <FiLogOut />
+                                        <Link to="/" className="logout-txt">Logout</Link>
+                                        <FiLogOut className="logout-txt" />
                                     </div>
                                 </div>
+
+                                {/* end user hover */}
+
                             </div>
                         </li>
                         <li>
