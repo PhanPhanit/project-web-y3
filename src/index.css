@@ -13,6 +13,7 @@
   --color-copyright: #0E6935;
   --opacity-text: 0.8;
   --color-popup: rgba(0, 0, 0, 0.5);
+  --color-dropbox: #eee;
 }
 *{
   margin: 0;
@@ -42,4 +43,19 @@ a{
 }
 .font-poppin{
   font-family: 'Poppins', sans-serif;
+}
+.btn{
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: #fff;
+  transition: 0.2s;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+.link-btn{
+  background: var(--color-primary);
 }

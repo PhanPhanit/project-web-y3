@@ -4,9 +4,11 @@ header{
     background-color: var(--color-nav);
     position: sticky;
     top: 0;
+    padding: 0 15px;
     box-shadow: 1px 7px 12px -4px rgba(176,176,176,0.7);
     -webkit-box-shadow: 1px 7px 12px -4px rgba(176,176,176,0.7);
     -moz-box-shadow: 1px 7px 12px -4px rgba(176,176,176,0.7);
+    z-index: 100000;
 }
 header .wrapper-menu{
     display: flex;
@@ -18,9 +20,11 @@ header .right-menu{
     display: flex;
     align-items: center;
 }
-
+header .left-menu,
+header .center-menu{
+    flex-grow: 1;
+}
 /* logo */
-
 header .logo font:nth-child(1){
     color: var(--color-primary);
     font-size: 2.8rem;
@@ -49,6 +53,21 @@ header .logo font:nth-child(3){
         font-size: 1.8rem;
     }
 }
+@media screen and (max-width: 576px){
+    header{
+        padding: 0 5px;
+    }
+    header .logo font:nth-child(1){
+        font-size: 2.2rem;
+    }
+    header .logo font:nth-child(2){
+        font-size: 1.4rem;
+    }
+    header .logo font:nth-child(3){
+        font-size: 1.6rem;
+    }
+}
+
 
 /* end logo */
 
@@ -57,7 +76,8 @@ header .logo font:nth-child(3){
 
 header .left-menu .frm-search{
     margin-left: 3rem;
-    width: 250px;
+    max-width: 350px;
+    flex-grow: 1;
 }
 header .left-menu .frm-search div{
     width: 100%;
@@ -95,10 +115,20 @@ header .frm-search div input:focus ~ button .icon{
     color: var(--color-primary);
 }
 
-@media screen and (max-width: 1040px){
+@media screen and (max-width: 1060px){
     header .left-menu .frm-search{
         margin-left: 2rem;
-        width: 200px;
+        max-width: 200px;
+    }
+}
+@media screen and (max-width: 930px){
+    header .left-menu .frm-search{
+        max-width: 400px;
+    }
+ }
+@media screen and (max-width: 576px){
+    header .left-menu .frm-search{
+        margin-left: 1rem;
     }
 }
 
@@ -127,7 +157,7 @@ header .center-menu ul{
     position: absolute;
     top: 100%;
     left: 50%;
-    background: red;
+    background: var(--color-dropbox);
     flex-direction: column;
     border-radius: 5px;
     transform: translateX(-50%);
@@ -146,7 +176,7 @@ header .center-menu ul{
     height: 10px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid red;
+    border-bottom: 10px solid var(--color-dropbox);
     border-top: 18px solid transparent;
  }
  header .center-menu .dropbox span{
@@ -176,7 +206,12 @@ header .center-menu ul{
         font-size: 20px;
     }
     header .center-menu ul li{
-        padding: 15px 18px;
+        padding: 15px 15px;
+    }
+ }
+ @media screen and (max-width: 930px){
+    header .center-menu{
+        display: none;
     }
  }
 
@@ -211,8 +246,13 @@ header .right-menu ul li:nth-child(3){
     align-items: center;
 }
 header .right-menu .btn-menu{
+    color: var(--color-primary);
     cursor: pointer;
     font-size: 2.3rem;
+    transition: 0.2s;
+}
+header .right-menu .btn-menu:hover{
+    opacity: 0.8;
 }
 
 /* user hover */
@@ -223,14 +263,14 @@ header .right-menu .user-icon .user-hower{
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    background-color: red;
+    background-color: var(--color-dropbox);
     color: var(--color-text);
     padding: 15px;
     border-radius: 8px;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
     cursor: auto;
 }
 header .right-menu .user-icon:hover .user-hower{
@@ -240,17 +280,17 @@ header .right-menu .user-icon .user-hower .header{
     width: 100%;
 }
 header .right-menu .user-icon .user-hower .header h4{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 header .right-menu .user-hower .header span{
-    font-size: 1.2rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 header .right-menu .user-hower .body{
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 header .right-menu .user-hower .body .link{
     margin-top: 15px 0;
@@ -268,7 +308,7 @@ header .right-menu .user-hower .footer{
 }
 header .right-menu .user-hower .logout-txt{
     color: var(--color-text);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 header .right-menu .user-hower .logout-txt:hover{
@@ -286,6 +326,11 @@ header .right-menu ul li:nth-child(2){
     align-items: center;
     cursor: pointer;
     position: relative;
+}
+header .right-menu ul li:nth-child(2) .link-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 header .right-menu ul li:nth-child(2) span{
     position: absolute;
@@ -322,5 +367,18 @@ header .right-menu ul li:nth-child(2) span{
         height: 25px;
     }
 }
+@media screen and (max-width: 930px){
+    header .right-menu ul li:nth-child(1){
+        display: none;
+    }
+    header .right-menu ul li:nth-child(3){
+        display: flex;
+    }
+ }
+ @media screen and (max-width: 576px){
+    header .right-menu ul li{
+        padding: 18px 10px;
+    }
+ }
 
 /* end right menu */

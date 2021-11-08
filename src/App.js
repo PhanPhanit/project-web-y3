@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -27,7 +27,7 @@ function App() {
           <Error />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

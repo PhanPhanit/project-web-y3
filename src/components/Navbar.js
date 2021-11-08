@@ -86,8 +86,10 @@ function Navbar() {
                             </div>
                         </li>
                         <li>
-                            <AiOutlineShopping />
-                            <span>0</span>
+                            <Link className="link-cart" to="/cart">
+                                <AiOutlineShopping />
+                                <span>0</span>
+                            </Link>
                         </li>
                         <li>
                             <FiMenu className="btn-menu" />
