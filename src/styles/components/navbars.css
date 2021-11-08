@@ -38,6 +38,18 @@ header .logo font:nth-child(3){
     font-weight: 700;
 }
 
+@media screen and (max-width: 1040px){
+    header .logo font:nth-child(1){
+        font-size: 2.5rem;
+    }
+    header .logo font:nth-child(2){
+        font-size: 1.5rem;
+    }
+    header .logo font:nth-child(3){
+        font-size: 1.8rem;
+    }
+}
+
 /* end logo */
 
 /* search form */
@@ -81,6 +93,13 @@ header .frm-search div .icon{
 }
 header .frm-search div input:focus ~ button .icon{
     color: var(--color-primary);
+}
+
+@media screen and (max-width: 1040px){
+    header .left-menu .frm-search{
+        margin-left: 2rem;
+        width: 200px;
+    }
 }
 
 /* end search form */
@@ -152,6 +171,15 @@ header .center-menu ul{
      display: none;
  }
 
+ @media screen and (max-width: 1040px){
+    header .center-menu ul li a{
+        font-size: 20px;
+    }
+    header .center-menu ul li{
+        padding: 15px 18px;
+    }
+ }
+
  /* end center menu */
 
 /* right menu */
@@ -177,8 +205,15 @@ header .right-menu ul li:nth-child(1) .user-icon{
     align-items: center;
     cursor: pointer;
 }
-
-/* end right menu */
+header .right-menu ul li:nth-child(3){
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+header .right-menu .btn-menu{
+    cursor: pointer;
+    font-size: 2.3rem;
+}
 
 /* user hover */
 
@@ -243,6 +278,7 @@ header .right-menu .user-hower .logout-txt:hover{
 
 /* end user hover */
 
+/* cart */
 header .right-menu ul li:nth-child(2){
     font-size: 35px;
     display: flex;
@@ -264,5 +300,27 @@ header .right-menu ul li:nth-child(2) span{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
+    font-weight: 500;
 }
+/* end cart */
+
+@media screen and (max-width: 1040px){
+    header .right-menu ul li:nth-child(1) .user-icon{
+        width: 35px;
+        height: 35px;
+    }
+    header .right-menu ul li{
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+    header .right-menu ul li:nth-child(2){
+        font-size: 35px;
+    }
+    header .right-menu ul li:nth-child(2) span{
+        font-size: 14px;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* end right menu */

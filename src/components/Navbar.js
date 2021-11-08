@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineShopping} from 'react-icons/ai';
-import {FiLogOut} from 'react-icons/fi';
+import {FiLogOut, FiMenu} from 'react-icons/fi';
 import {FaUserAlt} from 'react-icons/fa';
 import '../styles/components/navbars.css';
 import {NavbarData} from './utils/NavbarData';
@@ -88,6 +88,9 @@ function Navbar() {
                         <li>
                             <AiOutlineShopping />
                             <span>0</span>
+                        </li>
+                        <li>
+                            <FiMenu className="btn-menu" />
                         </li>
                     </ul>
                 </div>
