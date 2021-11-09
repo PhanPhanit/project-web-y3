@@ -44,6 +44,7 @@ a{
 .font-poppin{
   font-family: 'Poppins', sans-serif;
 }
+/* btn */
 .btn{
   font-size: 1.2rem;
   font-weight: bold;
@@ -56,6 +57,17 @@ a{
 .btn:hover{
   opacity: 0.8;
 }
+@media (max-width: 1200px){
+  .btn{
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px){
+  .btn{
+    font-size: 0.8rem;
+  }
+}
+/* end btn */
 .link-btn{
   background: var(--color-primary);
 }

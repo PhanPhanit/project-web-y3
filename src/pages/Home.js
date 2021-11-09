@@ -1,10 +1,11 @@
 import React from 'react'
-import { Slider } from '../components'
+import { Slider, Category } from '../components'
 
 function Home() {
     return (
         <>
             <Slider />
+            <Category />
         </>
     )
 }
