@@ -1,14 +1,10 @@
 import React from 'react'
 import '../styles/components/category.css'
-import {CategorySlide} from '../components';
 
-const Category = () => {
+const Category = ({title}) => {
     return (
-        <section className="wrapper-global category">
-            <h2>Categories</h2>
-            <div className="cate-slide">
-                <CategorySlide />
-            </div>
+        <section className="wrapper-global category font-cat">
+            <h2>{title}</h2>
         </section>
     )
 }

@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import Slider from "./Slider";
 import Category from "./Category";
 import CategorySlide from "./CategorySlide";
+import NewArrivalBox from "./NewArrivalBox";
 
 export {
     Footer,
@@ -11,5 +12,6 @@ export {
     Sidebar,
     Slider,
     Category,
-    CategorySlide
+    CategorySlide,
+    NewArrivalBox
 }
