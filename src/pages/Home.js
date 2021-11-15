@@ -7,7 +7,6 @@ function Home() {
             <Slider />
             <Category title="Categories"/>
             <CategorySlide />
-            <Category title="New Arrival"/>
             <NewArrivalBox />
         </>
     )

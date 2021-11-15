@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartPage, Category, Home, Profile, ViewBook, Error } from "./pages";
 import { Navbar, Sidebar, Footer } from "./components";
 
@@ -9,24 +9,14 @@ function App() {
     <Router>
       <Navbar />
       {/* <Sidebar /> */}
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/categories/:menuName">
-          <Category />
-        </Route>
-        <Route path="/cart">
-          <CartPage />
-        </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
-        <Route path="/viewbook/:id" children={<ViewBook />}></Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/categories/:menuName" element={<Category />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/viewbook/:id" element={<ViewBook />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
       {/* <Footer /> */}
     </Router>
   );
