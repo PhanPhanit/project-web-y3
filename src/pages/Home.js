@@ -1,5 +1,5 @@
 import React from 'react'
-import { Slider, Category, CategorySlide, NewArrivalBox } from '../components'
+import { Slider, Category, CategorySlide, NewArrivalBox, AllFavorBook } from '../components'
 
 function Home() {
     return (
@@ -8,6 +8,8 @@ function Home() {
             <Category title="Categories"/>
             <CategorySlide />
             <NewArrivalBox />
+            <Category title="All Favorite Books"/>
+            <AllFavorBook />
         </>
     )
 }

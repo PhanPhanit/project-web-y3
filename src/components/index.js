@@ -5,6 +5,7 @@ import Slider from "./Slider";
 import Category from "./Category";
 import CategorySlide from "./CategorySlide";
 import NewArrivalBox from "./NewArrivalBox";
+import AllFavorBook from "./AllFavorBook"
 
 export {
     Footer,
@@ -13,5 +14,6 @@ export {
     Slider,
     Category,
     CategorySlide,
-    NewArrivalBox
+    NewArrivalBox,
+    AllFavorBook
 }
