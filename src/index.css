@@ -30,9 +30,12 @@ ul{
 a{
   text-decoration: none;
 }
+.link-none{
+  color: var(--color-text);
+}
 /* font */
 .font-cat{
-  font-size: 24px;
+  font-size: 28px;
 }
 .font-title{
   font-size: 18px;
