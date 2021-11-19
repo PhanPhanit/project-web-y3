@@ -1,7 +1,6 @@
 /* wraper */
 .wrapper-arrive{
     padding: 20px 15px;
-    background: var(--color-white);
 }
 .wrapper-arrive .title-arrive{
     text-align: center;
@@ -20,7 +19,7 @@
 .wrapper-arrive .box-arrive img{
     width: 100%;
     height: 300px;
-    /* object-fit: cover; */
+    /* object-fit: contain; */
 }
 /* into */
 .wrapper-arrive .box-arrive .info{
@@ -73,6 +72,23 @@
 @media screen and (max-width: 860px) {
     .wrapper-arrive .box-arrive .info .star-price .star{
         display: block;
+    }
+}
+@media screen and (max-width: 960px){
+    .wrapper-arrive .box-arrive .info .sold-dis,
+    .wrapper-arrive .box-arrive .info .star-price{
+        font-size: 14px;
+    }
+    .wrapper-arrive .box-arrive .info .star-price .star .star-icon span{
+        font-size: 20px !important;
+    }
+}
+@media screen and (max-width: 439px) {
+    .wrapper-arrive .box-arrive img{
+        object-fit: contain;
+    }
+    .wrapper-arrive .box-arrive .info{
+        padding: 0 30px;
     }
 }
 /* btn add to cart */

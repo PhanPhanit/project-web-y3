@@ -35,7 +35,7 @@ a{
 }
 /* font */
 .font-cat{
-  font-size: 28px;
+  font-size: 2.2rem;
 }
 .font-title{
   font-size: 18px;
@@ -45,7 +45,12 @@ a{
 }
 @media (max-width: 768px){
   .font-cat{
-    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  .font-title{
+    font-size: 15px;
   }
 }
 /* end font */
@@ -93,4 +98,7 @@ a{
 /* end btn */
 .link-btn{
   background: var(--color-primary);
+}
+.section-white{
+  background-color: var(--color-white);
 }

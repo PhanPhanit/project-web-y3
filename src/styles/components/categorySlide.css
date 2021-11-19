@@ -22,3 +22,19 @@
 .section-cate-wrap .cate-box h3{
     color: var(--color-text);
 }
+
+@media screen and (max-width: 620px) {
+    .section-cate-wrap{
+        grid-template-columns: 1fr 1fr;
+    }
+    .section-cate-wrap .cate-box h3{
+        font-size: 14px;
+    }
+    .section-cate-wrap .cate-box img{
+        width: 30px;
+        height: 30px;
+    }
+    .section-cate-wrap{
+        padding: 0 20px;
+    }
+}
