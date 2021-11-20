@@ -94,7 +94,7 @@
 /* btn add to cart */
 .wrapper-arrive .box-arrive .info .add-cart{
     width: 100%;
-    margin-top: 8px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }
@@ -103,7 +103,7 @@
     color: var(--color-white);
     font-size: 14px;
     font-weight: bold;
-    padding: 5px 15px;
+    padding: 8px 17px;
     border-radius: 10px;
     display: flex;
     align-items: center;

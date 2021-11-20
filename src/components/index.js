@@ -6,6 +6,7 @@ import Category from "./Category";
 import CategorySlide from "./CategorySlide";
 import NewArrivalBox from "./NewArrivalBox";
 import AllFavorBook from "./AllFavorBook"
+import AllFavorBookBox from "./AllFavorBookBox";
 
 export {
     Footer,
@@ -15,5 +16,6 @@ export {
     Category,
     CategorySlide,
     NewArrivalBox,
-    AllFavorBook
+    AllFavorBook,
+    AllFavorBookBox
 }
