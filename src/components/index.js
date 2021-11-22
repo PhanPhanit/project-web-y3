@@ -7,6 +7,8 @@ import CategorySlide from "./CategorySlide";
 import NewArrivalBox from "./NewArrivalBox";
 import AllFavorBook from "./AllFavorBook"
 import AllFavorBookBox from "./AllFavorBookBox";
+import Pagination from "./Pagination";
+import PaginationItem from "./PaginationItem";
 
 export {
     Footer,
@@ -17,5 +19,7 @@ export {
     CategorySlide,
     NewArrivalBox,
     AllFavorBook,
-    AllFavorBookBox
+    AllFavorBookBox,
+    Pagination,
+    PaginationItem
 }

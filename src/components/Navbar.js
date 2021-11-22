@@ -5,6 +5,7 @@ import {FiLogOut, FiMenu} from 'react-icons/fi';
 import {FaUserAlt} from 'react-icons/fa';
 import '../styles/components/navbars.css';
 import {NavbarData} from './utils/NavbarData';
+import {Link as LinkScroll} from 'react-scroll';
 
 function Navbar() {
     return (
@@ -47,7 +48,10 @@ function Navbar() {
                                 }
                                 return (
                                     <li key={id}>
-                                        <a href={link}>{title}</a>
+                                        <LinkScroll className="test6" to="footer" spy={true} smooth={true} duration={1000}>
+                                            {title}
+                                        </LinkScroll>
+                                        {/* <a href={link}>{title}</a> */}
                                     </li>
                                 );
                             })

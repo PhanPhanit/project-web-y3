@@ -328,6 +328,7 @@ header .right-menu ul li:nth-child(2){
     position: relative;
 }
 header .right-menu ul li:nth-child(2) .link-cart{
+    color: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
