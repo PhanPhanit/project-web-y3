@@ -7,8 +7,9 @@ import CategorySlide from "./CategorySlide";
 import NewArrivalBox from "./NewArrivalBox";
 import AllFavorBook from "./AllFavorBook"
 import AllFavorBookBox from "./AllFavorBookBox";
-import Pagination from "./Pagination";
+import PaginationReact from "./PaginationReact";
 import PaginationItem from "./PaginationItem";
+import EasyPay from './EasyPay';
 
 export {
     Footer,
@@ -20,6 +21,7 @@ export {
     NewArrivalBox,
     AllFavorBook,
     AllFavorBookBox,
-    Pagination,
-    PaginationItem
+    PaginationReact,
+    PaginationItem,
+    EasyPay
 }

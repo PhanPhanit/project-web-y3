@@ -6,8 +6,10 @@ import {FaUserAlt} from 'react-icons/fa';
 import '../styles/components/navbars.css';
 import {NavbarData} from './utils/NavbarData';
 import {Link as LinkScroll} from 'react-scroll';
+import {useActionContext} from '../context/action_context'
 
 function Navbar() {
+    const {openSidebar} = useActionContext(); 
     return (
         <header>
             {/* Header */}
@@ -48,10 +50,9 @@ function Navbar() {
                                 }
                                 return (
                                     <li key={id}>
-                                        <LinkScroll className="test6" to="footer" spy={true} smooth={true} duration={1000}>
+                                        <LinkScroll to={link} spy={true} smooth={true} duration={1000}>
                                             {title}
                                         </LinkScroll>
-                                        {/* <a href={link}>{title}</a> */}
                                     </li>
                                 );
                             })
@@ -96,7 +97,7 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <FiMenu className="btn-menu" />
+                            <FiMenu className="btn-menu" onClick={openSidebar} />
                         </li>
                     </ul>
                 </div>

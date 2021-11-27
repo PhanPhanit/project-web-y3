@@ -2,7 +2,7 @@ export const NavbarData = [
     {
         id: 1,
         title: 'Home',
-        link: '#footer'
+        link: 'footer'
     },
     {
         id: 2,
@@ -12,11 +12,11 @@ export const NavbarData = [
     {
         id: 3,
         title: 'Contact Us',
-        link: '#footer'
+        link: 'footer'
     },
     {
         id: 4,
         title: 'About',
-        link: '#footer'
+        link: 'footer'
     }
 ];

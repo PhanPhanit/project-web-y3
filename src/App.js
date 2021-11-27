@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <Sidebar /> */}
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categories/:menuName" element={<Category />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path="/viewbook/:id" element={<ViewBook />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

@@ -136,3 +136,9 @@
 .all-favor-book .favor-box .info .add-cart .btn-add-cart span{
     transform: translateY(10%);
 }
+
+@media screen and (max-width: 440px) {
+    .all-favor-book .favor-box .info .add-cart{
+        margin-bottom: 10px;
+    }
+}

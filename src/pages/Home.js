@@ -1,5 +1,13 @@
 import React from 'react'
-import { Slider, Category, CategorySlide, NewArrivalBox, AllFavorBook, Pagination } from '../components'
+import {
+    Slider,
+    Category,
+    CategorySlide,
+    NewArrivalBox,
+    AllFavorBook,
+    PaginationReact,
+    EasyPay
+} from '../components'
 
 function Home() {
     return (
@@ -10,7 +18,9 @@ function Home() {
             <NewArrivalBox />
             <Category title="All Favorite Books"/>
             <AllFavorBook />
-            <Pagination />
+            <PaginationReact />
+            <Category title="Easy to Pay"/>
+            <EasyPay />
         </>
     )
 }
