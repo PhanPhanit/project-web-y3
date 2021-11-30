@@ -1,11 +1,117 @@
-import React from 'react'
+import React from "react";
+import "../styles/components/footer.css";
+import { Link } from "react-router-dom";
+import { BsTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { BsYoutube, BsFacebook, BsGithub } from "react-icons/bs";
+import {
+  AiFillInstagram,
+  AiOutlineTwitter,
+  AiFillCopyrightCircle,
+} from "react-icons/ai";
 
 function Footer() {
-    return (
-        <div id="footer">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7817.541909735166!2d104.81937509999999!3d11.568270800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2skh!4v1637679321223!5m2!1sen!2skh" width="600" height="450" style={{border: '0'}} allowfullscreen="" loading="lazy"></iframe>
+  return (
+    <footer className="font-poppin">
+      <div className="section1">
+        <div className="contact-us">
+          <h3>Contact Us</h3>
+          <p>Send us a message</p>
+          <form>
+            <div>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div>
+              <input type="text" placeholder="Your email" />
+            </div>
+            <div>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="5"
+                placeholder="Your meesage"
+              ></textarea>
+            </div>
+            <Link className="send-btn" to="">
+              Send
+            </Link>
+          </form>
         </div>
-    )
+        <div className="about-us">
+          <h3>About Us</h3>
+          <p>Wsbook is an E-commerce website which proide:</p>
+          <ul>
+            <li>Quality</li>
+            <li>Reliability</li>
+            <li>Easy for payment</li>
+            <li>Fast delivery</li>
+          </ul>
+        </div>
+        <div className="logo">
+          <Link to="/">
+            <font>W</font>
+            <font>s</font>
+            <font>book</font>
+          </Link>
+          <div className="contact-links">
+            <div className="contact-phone">
+              <a href="tel:086676682">
+                <span>
+                  <BsTelephoneFill />
+                </span>
+                <span>(855)86-676-682</span>
+              </a>
+            </div>
+            <div className="contact-email">
+              <a href="mailto:wsbook.team@gmail.com">
+                <span>
+                  <MdEmail />
+                </span>
+                <span>wsbook.team@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="section2">
+        <ul>
+          <li>
+            <a href="">
+              <BsGithub />
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <BsFacebook />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <AiFillInstagram />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <AiOutlineTwitter />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <BsYoutube />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="copy-right">
+        <a href="">
+          <AiFillCopyrightCircle />
+        </a>
+        <p>Copyright 2021 | All Right Reserved by Wsbook's Team</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
