@@ -17,7 +17,7 @@ function App() {
         <Route path="/viewbook/:id" element={<ViewBook />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
