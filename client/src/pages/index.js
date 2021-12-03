@@ -4,7 +4,7 @@ import Home from './Home';
 import Profile from './Profile';
 import ViewBook from './ViewBook';
 import Error from './Error';
-
+import LoginSignup from './LoginSignup';
 
 export {
     CartPage,
@@ -12,5 +12,6 @@ export {
     Home,
     Profile,
     ViewBook,
-    Error
+    Error,
+    LoginSignup
 }

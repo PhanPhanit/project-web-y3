@@ -1,4 +1,4 @@
-# Project React
+# Project Mern Stack
 
 ## Getting Started with Create React App
 
