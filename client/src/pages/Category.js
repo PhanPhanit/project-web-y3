@@ -1,10 +1,23 @@
 import React from 'react'
+import {
+    Slider,
+    CategoryTitle,
+    CategorySection,
+    AllFavorBook,
+    PaginationReact,
+} from '../components'
+
 
 function Category() {
     return (
-        <div>
-            Category
-        </div>
+        <>
+            <Slider />
+            <CategoryTitle title="Categories"/>
+            <CategorySection />
+            <CategoryTitle title="All Favorite Books"/>
+            <AllFavorBook />
+            <PaginationReact />
+        </>
     )
 }
 

@@ -3,7 +3,7 @@ import {Link as LinkScroll} from 'react-scroll';
 import {Link} from 'react-router-dom';
 import {AiOutlineClose} from 'react-icons/ai';
 import {NavbarData} from './utils/NavbarData';
-import '../styles/components/sidebar.css';
+import '../styles/sidebar.css';
 import {useActionContext} from '../context/action_context';
 
 function Sidebar() {

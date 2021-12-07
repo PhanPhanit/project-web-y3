@@ -1,36 +1,27 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Navigation } from 'swiper';
 import {FaShoppingBag} from 'react-icons/fa';
 import {MdOutlineSell} from 'react-icons/md';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import ReactStars from "react-rating-stars-component";
-import '../styles/newArrivalBox.css'
+import '../styles/viewBookSlide.css'
 
-const NewArrivalBox = () => {
-    SwiperCore.use([Autoplay]);
+const ViewBookSlide = () => {
+    SwiperCore.use([Navigation]);
     return (
-        <section className="section-white">
-            <div className="wrapper-global wrapper-arrive">
-
-                <div className="title-arrive">
-                    <h2 className="font-cat">New Arrival</h2>
-                </div>
+            <div className="wrapper-global view-book-slide">
                 <Swiper
                     className="swiper-arrive font-khmer"
-                    speed={1000}
+                    speed={500}
                     spaceBetween={30}
                     slidesPerView={1}
                     onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true
-                    }}
+                    navigation={true}
                     breakpoints={{
                         320: {
                             slidesPerView: 1,
@@ -56,7 +47,6 @@ const NewArrivalBox = () => {
                     >
 
 
-
                     <SwiperSlide className="box-arrive">
                         <Link to="/viewbook/123">
                             <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
@@ -65,7 +55,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -84,11 +74,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -99,7 +84,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -118,11 +103,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -133,7 +113,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -152,11 +132,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -167,7 +142,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -186,11 +161,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -201,7 +171,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -220,11 +190,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -235,7 +200,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -254,11 +219,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -269,7 +229,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -288,11 +248,6 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="box-arrive">
@@ -303,7 +258,7 @@ const NewArrivalBox = () => {
                             <h4 className="title">
                                 <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
                             </h4>
-                            <span className="author">Transi Ated</span>
+                            <span className="author">Transi Ated (author)</span>
                             <div className="sold-dis">
                                 <div className="sold">
                                     <MdOutlineSell /><span>200 sold</span>
@@ -322,25 +277,11 @@ const NewArrivalBox = () => {
                                 </div>
                                 <div className="price">$29.99</div>
                             </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
                         </div>
-                    </SwiperSlide>
-
-
-
-
-
-
-
-                    
+                    </SwiperSlide> 
                 </Swiper>
             </div>
-        </section>
     )
 }
 
-export default NewArrivalBox
+export default ViewBookSlide

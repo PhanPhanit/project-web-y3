@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineShopping} from 'react-icons/ai';
 import {FiLogOut, FiMenu} from 'react-icons/fi';
 import {FaUserAlt} from 'react-icons/fa';
-import '../styles/components/navbars.css';
+import '../styles/navbars.css';
 import {NavbarData} from './utils/NavbarData';
 import {Link as LinkScroll} from 'react-scroll';
 import {useActionContext} from '../context/action_context'

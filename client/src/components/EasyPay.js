@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/easyPay.css'
+import '../styles/easyPay.css'
 const EasyPay = () => {
     return (
         <section className="easy-pay">

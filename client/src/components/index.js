@@ -2,28 +2,34 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Slider from "./Slider";
-import Category from "./Category";
-import CategorySlide from "./CategorySlide";
+import CategoryTitle from "./CategoryTitle";
+import CategorySection from "./CategorySection";
 import NewArrivalBox from "./NewArrivalBox";
 import AllFavorBook from "./AllFavorBook"
 import AllFavorBookBox from "./AllFavorBookBox";
 import PaginationReact from "./PaginationReact";
-import PaginationItem from "./PaginationItem";
 import EasyPay from './EasyPay';
 import MapSection from './MapSection';
+import ViewBookDetail from "./ViewBookDetail";
+import ViewBookSectionTitle from "./ViewBookSectionTitle";
+import ViewBookSlide from "./ViewBookSlide";
+import CustomerRate from "./CustomerRate";
 
 export {
     Footer,
     Navbar,
     Sidebar,
     Slider,
-    Category,
-    CategorySlide,
+    CategoryTitle,
+    CategorySection,
     NewArrivalBox,
     AllFavorBook,
     AllFavorBookBox,
     PaginationReact,
-    PaginationItem,
     EasyPay,
-    MapSection
+    MapSection,
+    ViewBookDetail,
+    ViewBookSectionTitle,
+    ViewBookSlide,
+    CustomerRate
 }

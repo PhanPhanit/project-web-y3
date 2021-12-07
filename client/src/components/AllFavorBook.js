@@ -1,7 +1,6 @@
 import React from 'react'
 import {AllFavorBookBox} from './index';
-import {Pagination} from './index';
-import '../styles/components/allFavorBook.css'
+import '../styles/allFavorBook.css'
 const AllFavorBook = () => {
     return (
         <section className="wrapper-global all-favor-book">

@@ -3,7 +3,7 @@ import {GrLinkNext, GrLinkPrevious} from "react-icons/gr";
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 import Stack from '@mui/material/Stack';
-import '../styles/components/pagination.css';
+import '../styles/pagination.css';
 
 
 const PaginationReact = () => {

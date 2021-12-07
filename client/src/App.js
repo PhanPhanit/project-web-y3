@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartPage, Category, Home, Profile, LoginSignup, ViewBook, Error } from "./pages";
@@ -20,7 +19,7 @@ function App() {
         <Route path="/viewbook/:id" element={<ViewBook />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

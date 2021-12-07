@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/components/footer.css";
+import "../styles/footer.css";
 import { Link } from "react-router-dom";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -77,35 +77,35 @@ function Footer() {
       <div className="section2">
         <ul>
           <li>
-            <a href="">
+            <a href={() => false}>
               <BsGithub />
             </a>
           </li>
 
           <li>
-            <a href="">
+            <a href={() => false}>
               <BsFacebook />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href={() => false}>
               <AiFillInstagram />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href={() => false}>
               <AiOutlineTwitter />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href={() => false}>
               <BsYoutube />
             </a>
           </li>
         </ul>
       </div>
       <div className="copy-right">
-        <a href="">
+        <a>
           <AiFillCopyrightCircle />
         </a>
         <p>Copyright 2021 | All Right Reserved by Wsbook's Team</p>

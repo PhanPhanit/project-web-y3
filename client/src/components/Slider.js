@@ -5,7 +5,7 @@ import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 
-import '../styles/components/slider.css';
+import '../styles/slider.css';
 
 const Slider = () => {
     SwiperCore.use([Autoplay]);

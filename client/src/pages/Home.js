@@ -1,8 +1,8 @@
 import React from 'react'
 import {
     Slider,
-    Category,
-    CategorySlide,
+    CategoryTitle,
+    CategorySection,
     NewArrivalBox,
     AllFavorBook,
     PaginationReact,
@@ -14,15 +14,15 @@ function Home() {
     return (
         <>
             <Slider />
-            <Category title="Categories"/>
-            <CategorySlide />
+            <CategoryTitle title="Categories"/>
+            <CategorySection />
             <NewArrivalBox />
-            <Category title="All Favorite Books"/>
+            <CategoryTitle title="All Favorite Books"/>
             <AllFavorBook />
             <PaginationReact />
-            <Category title="Easy to Pay"/>
+            <CategoryTitle title="Easy to Pay"/>
             <EasyPay />
-            <Category title="Our Location"/>
+            <CategoryTitle title="Our Location"/>
             <MapSection />
         </>
     )

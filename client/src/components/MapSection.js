@@ -1,9 +1,9 @@
 import React from 'react'
-import '../styles/components/mapSection.css';
+import '../styles/mapSection.css';
 const MapSection = () => {
     return (
         <div className="wrapper-global map-wrapper">
-            <iframe src="http://maps.google.com/maps?q=11.561880001775203,104.85298717093411&z=15&output=embed" height="450" style={{border: '0'}} allowfullscreen="" loading="lazy"></iframe>
+            <iframe title="Google Map Our Store" src="http://maps.google.com/maps?q=11.561880001775203,104.85298717093411&z=15&output=embed" height="450" style={{border: '0'}} allowfullscreen="" loading="lazy"></iframe>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../images/login.png';
 import {FaEnvelope, FaLock} from 'react-icons/fa';
-import '../styles/components/signinSignup.css';
+import '../styles/signinSignup.css';
 const LoginSignup = () => {
     return (
         <section className="login-signup">
