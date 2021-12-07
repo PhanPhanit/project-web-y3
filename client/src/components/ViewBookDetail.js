@@ -16,10 +16,9 @@ const ViewBookDetail = () => {
             </div>
             <div className="right">
                 <div className="title">
-                    <h2>Yuri Herrera</h2>
-                    {/* <span>-</span>
-                    <span>August 14, 2021</span> */}
+                    <h2>Yuri Herrera dsfwefwef  wefwe fwe wef wef fwef wf ewfewe wfwewe wefew wefew wef  wefwefwefew</h2>
                 </div>
+                <span>Date: August 14, 2021</span>
                 <span className="subtitle">Author: Transi Ated</span>
                 <span className="subtitle">Publisher: Jim Dale (Narrator), Pottermore Publishing</span>
                 <div className="stars-rating">

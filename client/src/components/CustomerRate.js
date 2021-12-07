@@ -12,10 +12,46 @@ const CustomerRate = () => {
                         <div className="row">
                             <span>5 Stars</span>
                             <div className="box-color-star">
-                                <div className="percent-star"></div>
+                                <div className="percent-star" style={{width: "91%"}}></div>
                             </div>
                             <div className="box-percent-star">
                                 91%
+                            </div>
+                        </div>
+                        <div className="row">
+                            <span>4 Stars</span>
+                            <div className="box-color-star">
+                                <div className="percent-star" style={{width: "5%"}}></div>
+                            </div>
+                            <div className="box-percent-star">
+                                5%
+                            </div>
+                        </div>
+                        <div className="row">
+                            <span>3 Stars</span>
+                            <div className="box-color-star">
+                                <div className="percent-star" style={{width: "1%"}}></div>
+                            </div>
+                            <div className="box-percent-star">
+                                1%
+                            </div>
+                        </div>
+                        <div className="row">
+                            <span>2 Stars</span>
+                            <div className="box-color-star">
+                                <div className="percent-star" style={{width: "1%"}}></div>
+                            </div>
+                            <div className="box-percent-star">
+                                1%
+                            </div>
+                        </div>
+                        <div className="row">
+                            <span>1 Stars</span>
+                            <div className="box-color-star">
+                                <div className="percent-star" style={{width: "2%"}}></div>
+                            </div>
+                            <div className="box-percent-star">
+                                2%
                             </div>
                         </div>
                     </div>
@@ -27,7 +63,6 @@ const CustomerRate = () => {
                             isHalf={true}
                             edit={false}
                         />
-                        <span>39,210</span>
                     </div>
                 </div>
                 <h3 className="title">Customers Review</h3>
@@ -131,9 +166,9 @@ const CustomerRate = () => {
                         </div>
                     </div>
                 </div>
-                <div className="see-more">
+                <button type="button" className="see-more">
                     See more reviews
-                </div>
+                </button>
             </div>
         </section>
     )

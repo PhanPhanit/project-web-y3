@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
-import {FaShoppingBag} from 'react-icons/fa';
 import {MdOutlineSell} from 'react-icons/md';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
