@@ -16,6 +16,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+@media screen and (max-width: 768px) {
+    .customer-rate .product-total-stars{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 100px;
+    }
+}
 .customer-rate .product-total-stars .left .row{
     display: flex;
     align-items: center;
@@ -24,6 +30,7 @@
     margin: 10px 0;
 }
 .customer-rate .product-total-stars .left .row span{
+    flex-shrink: 0;
     font-size: 18px;
 }
 .customer-rate .product-total-stars .left .row .box-color-star{
@@ -42,11 +49,19 @@
     border-radius: 5px;
     text-align: center;
 }
+
+/* right */
+
 .customer-rate .product-total-stars .right{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
+}
+@media screen and (max-width: 900px){
+    .customer-rate .product-total-stars .right{
+        justify-content: center;
+    }
 }
 .customer-rate .product-total-stars .right > span{
     font-size: 22px;

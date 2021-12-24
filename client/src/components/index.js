@@ -14,6 +14,10 @@ import ViewBookDetail from "./ViewBookDetail";
 import ViewBookSectionTitle from "./ViewBookSectionTitle";
 import ViewBookSlide from "./ViewBookSlide";
 import CustomerRate from "./CustomerRate";
+import ProfileAccount from "./ProfileAccount";
+import ProfileHistory from "./ProfileHistory";
+import Feedback from './Feedback';
+import Checkout from "./Checkout";
 
 export {
     Footer,
@@ -31,5 +35,9 @@ export {
     ViewBookDetail,
     ViewBookSectionTitle,
     ViewBookSlide,
-    CustomerRate
+    CustomerRate,
+    ProfileAccount,
+    ProfileHistory,
+    Feedback,
+    Checkout
 }

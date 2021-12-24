@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartPage, Category, Home, Profile, LoginSignup, ViewBook, Error } from "./pages";
-import { Navbar, Sidebar, Footer } from "./components";
+import { Navbar, Sidebar, Footer, Feedback, Checkout } from "./components";
 
 
 function App() {
@@ -10,6 +10,8 @@ function App() {
     <Router>
       <Navbar />
       <Sidebar />
+      <Feedback />
+      <Checkout />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categories/:menuName" element={<Category />} />

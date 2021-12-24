@@ -182,9 +182,10 @@ header .center-menu ul{
  header .center-menu .dropbox span{
      cursor: pointer;
      padding: 10px 10px;
+     color: var(--color-white);
  }
  header .center-menu .dropbox span:hover{
-    color: var(--color-primary);
+    text-decoration: underline;
  }
  header .center-menu ul li a{
      color: var(--color-text);
@@ -275,6 +276,7 @@ header .right-menu .user-icon .user-hower{
 }
 header .right-menu .user-icon:hover .user-hower{
     display: flex;
+    color: var(--color-white);
 }
 header .right-menu .user-icon .user-hower .header{
     width: 100%;
@@ -295,10 +297,10 @@ header .right-menu .user-hower .body{
 header .right-menu .user-hower .body .link{
     margin-top: 15px 0;
     transition: 0.2s;
-    color: var(--color-text);
+    color: var(--color-white);
 }
 header .right-menu .user-hower .body .link:hover{
-    color: var(--color-primary)
+    text-decoration: underline;
 }
 header .right-menu .user-hower .footer{
     width: 100%;
@@ -310,9 +312,10 @@ header .right-menu .user-hower .logout-txt{
     color: var(--color-text);
     font-size: 1.1rem;
     cursor: pointer;
+    color: var(--color-white);
 }
-header .right-menu .user-hower .logout-txt:hover{
-    color: var(--color-discount);
+header .right-menu .user-hower .logout-txt:first-child:hover{
+    text-decoration: underline;
 }
 
 

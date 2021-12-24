@@ -1,0 +1,107 @@
+.section-checkout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    transform: scale(0);
+    padding: 10px;
+}
+.section-checkout.show{
+    transition: 0.2s;
+    transform: scale(1);
+}
+.section-checkout .checkout-wrapper{
+    background: var(--color-white);
+    width: 700px;
+}
+.section-checkout .checkout-wrapper .header{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EEEEEE;
+    position: relative;
+}
+.section-checkout .checkout-wrapper .header h2{
+    font-size: 22px;
+    color: var(--color-primary);
+}
+.section-checkout .checkout-wrapper .header .icon{
+    margin-left: auto;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.section-checkout .checkout-wrapper .header .icon:hover{
+    color: red;
+}
+.section-checkout .checkout-wrapper .body{
+    padding: 20px;
+}
+.section-checkout .checkout-wrapper .body .body-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.section-checkout .checkout-wrapper .body .body-header h3{
+    font-size: 20px;
+}
+.section-checkout .checkout-wrapper .body .body-header button{
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    background: none;
+    padding: 3px 15px;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.section-checkout .checkout-wrapper .body .body-header button .icon{
+    font-size: 12px;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper{
+    width: 100%;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress .left{
+    flex: 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress .right{
+    border: 1px solid #AFAFAF;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 10px 10px;
+    gap: 20px;
+    align-items: center;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress .right span .icon{
+    cursor: pointer;
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress .right .edit .icon{
+    color: var(--color-primary);
+}
+.section-checkout .checkout-wrapper .body .address-wrapper .single-adress .right .delete .icon{
+    color: #BF1414;
+}

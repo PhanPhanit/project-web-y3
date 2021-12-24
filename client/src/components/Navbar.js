@@ -9,7 +9,7 @@ import {Link as LinkScroll} from 'react-scroll';
 import {useActionContext} from '../context/action_context'
 
 function Navbar() {
-    const {openSidebar} = useActionContext(); 
+    const {openSidebar, accountSettingClick, historyClick} = useActionContext(); 
     return (
         <header>
             {/* Header */}
@@ -48,6 +48,15 @@ function Navbar() {
                                         </li>
                                     );
                                 }
+                                if(link==='home'){
+                                    return (
+                                        <li key={id}>
+                                            <Link to="/">
+                                                {title}
+                                            </Link>
+                                        </li>
+                                    );
+                                }
                                 return (
                                     <li key={id}>
                                         <LinkScroll to={link} spy={true} smooth={true} duration={1000}>
@@ -77,8 +86,8 @@ function Navbar() {
                                         <span>phanit12@gmail.com</span>
                                     </div>
                                     <div className="body">
-                                        <Link className="link" to="/profile">My Profile</Link>
-                                        <Link className="link" to="/profile">History</Link>
+                                        <Link className="link" to="/profile" onClick={accountSettingClick}>My Profile</Link>
+                                        <Link className="link" to="/profile" onClick={historyClick}>History</Link>
                                     </div>
                                     <div className="footer">
                                         <Link to="/" className="logout-txt">Logout</Link>
