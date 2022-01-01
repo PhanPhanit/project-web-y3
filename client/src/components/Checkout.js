@@ -1,77 +1,80 @@
 import React from 'react'
-import {AiOutlineClose} from 'react-icons/ai';
-import {BsPlusLg} from 'react-icons/bs';
-import {FaTrashAlt, FaEdit} from 'react-icons/fa'
 import '../styles/checkout.css'
+import StripeFormContainer from './StripeFormContainer';
 
 const Checkout = () => {
     return (
-        <section className="section-checkout show">
+        <section className="section-checkout">
             <div className="checkout-wrapper">
                 <div className="header">
                     <h2>Payment</h2>
-                    <AiOutlineClose className="icon" />
                 </div>
                 <div className="body">
-                    <div className="body-header">
-                        <h3>Address</h3>
-                        <button type="button"><span>Add</span><BsPlusLg className="icon" /></button>
+                    <div className="body-title">
+                        <h3>Billing Details</h3>
                     </div>
-                    <div className="address-wrapper">
-                        <div className="single-adress">
-                            <div className="left">
-                                <input type="radio" name="address-choice" />
-                            </div>
-                            <div className="right">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, in numquam nobis fuga quasi ipsum ipsa sequi explicabo hic id.</p>
-                                <span className="edit"><FaEdit className="icon" /></span>
-                                <span className="delete"><FaTrashAlt className="icon" /></span>
-                            </div>
+                    <form className="frm-address">
+                        <div className="frm-control">
+                            <label htmlFor="phone-number">Phone number</label>
+                            <input type="tel" id="phone-number" className="input-control" placeholder="+855" />
                         </div>
-                        <div className="single-adress">
-                            <div className="left">
-                                <input type="radio" name="address-choice" />
-                            </div>
-                            <div className="right">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, in numquam nobis fuga quasi ipsum ipsa sequi explicabo hic id.</p>
-                                <span className="edit"><FaEdit className="icon" /></span>
-                                <span className="delete"><FaTrashAlt className="icon" /></span>
-                            </div>
+                        <div className="frm-control">
+                            <label htmlFor="city">City</label>
+                            <select name="city" id="city" className="select-control">
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Banteay Meanchey">Banteay Meanchey</option>
+                                <option value="Battambang">Battambang</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                                <option value="Phnom Penh">Phnom Penh</option>
+                            </select>
                         </div>
-                        <div className="single-adress">
-                            <div className="left">
-                                <input type="radio" name="address-choice" />
-                            </div>
-                            <div className="right">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, in numquam nobis fuga quasi ipsum ipsa sequi explicabo hic id.</p>
-                                <span className="edit"><FaEdit className="icon" /></span>
-                                <span className="delete"><FaTrashAlt className="icon" /></span>
-                            </div>
+                        <div className="frm-control">
+                            <label htmlFor="address">Address</label>
+                            <input type="text" id="address" className="input-control" placeholder="Your Address" />
                         </div>
-                        <div className="single-adress">
-                            <div className="left">
-                                <input type="radio" name="address-choice" />
-                            </div>
-                            <div className="right">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, in numquam nobis fuga quasi ipsum ipsa sequi explicabo hic id.</p>
-                                <span className="edit"><FaEdit className="icon" /></span>
-                                <span className="delete"><FaTrashAlt className="icon" /></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="payment-option">
+                    </form>
+
+                    <div className="body-title">
                         <h3>Payment Option</h3>
-                        <div className="img-box">
-                            <span>
-                                <img src="" alt="" />
-                            </span>
-                            <span>
-                                <img src="" alt="" />
-                            </span>
-                            <span>
-                                <img src="" alt="" />
-                            </span>
-                        </div>
+                    </div>
+
+                    <div className="payment-option">
+                        {/* <label htmlFor="visa-master">
+                            <input type="radio" id="visa-master" name="payment-option" />
+                            <div className="img-box">
+                                <img src="https://www.pngall.com/wp-content/uploads/2017/05/Visa-Logo-PNG-Pic.png" alt="Visa" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="master" />
+                            </div>
+                        </label>
+                        <label htmlFor="paypal">
+                            <input type="radio" id="paypal" name="payment-option" />
+                            <div className="img-box">
+                                <img src="https://lavigneduroy.com/wp-content/uploads/2016/10/paypal-784404_960_720.png" alt="" />
+                            </div>
+                        </label> */}
+                    </div>
+                    <div className="pay-container">
+                        {/* <StripeFormContainer /> */}
                     </div>
                 </div>
             </div>

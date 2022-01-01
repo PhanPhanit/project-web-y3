@@ -12,7 +12,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="font-poppin">
+    <footer className="font-poppin" id="footer">
       <div className="section1">
         <div className="contact-us">
           <h3>Contact Us</h3>

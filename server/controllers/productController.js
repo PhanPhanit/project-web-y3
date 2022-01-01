@@ -39,7 +39,7 @@ const createProduct = async (req, res) => {
 }
 
 const getAllProducts = async (req, res) => {
-    const {name, category, sort} = req.query;
+    const {_id, name, category, sort, populate} = req.query;
     let queryObject = {isShow: true};
     let result = Product;
     if(name){
@@ -51,7 +51,13 @@ const getAllProducts = async (req, res) => {
     if(category){
         queryObject.category = category;
     }
+    if(_id){
+        queryObject._id = _id;
+    }
     result = result.find(queryObject);
+    if(populate){
+        result = result.populate(populate);
+    }
     if(sort){
         result = result.sort(sort);
     }
@@ -65,7 +71,7 @@ const getAllProducts = async (req, res) => {
 }
 
 const adminGetAllProducts = async (req, res) => {
-    const {name, category, sort, isShow="all"} = req.query;
+    const {_id, name, category, sort, isShow="all", populate} = req.query;
     let queryObject = {};
     if(isShow!=="all"){
         queryObject.isShow = isShow;
@@ -80,7 +86,13 @@ const adminGetAllProducts = async (req, res) => {
     if(category){
         queryObject.category = category;
     }
+    if(_id){
+        queryObject._id = _id;
+    }
     result = result.find(queryObject);
+    if(populate){
+        result = result.populate(populate);
+    }
     if(sort){
         result = result.sort(sort);
     }
@@ -101,7 +113,6 @@ const getSingleProduct = async (req, res) => {
     res.status(StatusCodes.OK).json({product});
 }
 const adminGetSingleProduct = async (req, res) => {
-    console.log("Hello");
     const {id: productId} = req.params;
     const product = await Product.findOne({_id: productId});
     if(!product){

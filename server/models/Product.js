@@ -85,6 +85,22 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     }
-}, {timestamps: true});
+}, {timestamps: true, toJSON: {virtuals: true}, toObject: {virtuals: true}});
+
+
+productSchema.virtual('reviews', {
+    ref: 'Review',
+    localField: "_id",
+    foreignField: "product",
+    justOne: false
+})
+
+
+
+productSchema.post('remove', async function(){
+    await this.model('Review').deleteMany({product: this._id});
+})
+
+
 
 module.exports = mongoose.model('Product', productSchema);

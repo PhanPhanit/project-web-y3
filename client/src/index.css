@@ -106,3 +106,6 @@ a{
   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.04);
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.04);
 }
+.Toastify__toast-container{
+  z-index: 100005 !important;
+}
