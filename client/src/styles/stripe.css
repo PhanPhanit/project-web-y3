@@ -6,12 +6,15 @@
     width: 100%;
     min-width: 500px;
     align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-      0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
     border-radius: 7px;
     padding: 40px;
   }
   
+  .stript-wrapper form > .total-price{
+    font-size: 18px;
+    color: #5B5B5B;
+    padding: 10px 0;
+  }
   
 .stript-wrapper #payment-message {
     color: rgb(105, 115, 134);
@@ -40,6 +43,7 @@
     transition: all 0.2s ease;
     box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
     width: 100%;
+    margin-top: 10px;
   }
   
 .stript-wrapper button:hover {
@@ -116,7 +120,7 @@
   }
   
   @media only screen and (max-width: 600px) {
-    form {
+    .stript-wrapper form {
       width: 80vw;
       min-width: initial;
     }

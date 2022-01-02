@@ -30,6 +30,7 @@ const checkoutRouter = require('./routes/checkOutRoutes');
 const productRouter = require('./routes/productRoutes');
 const uploadRouter = require('./routes/uploadRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
+const orderItemRouter = require('./routes/orderItemRoutes');
 // middleware
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -51,6 +52,7 @@ app.use('/api/v1/checkout', checkoutRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/upload', uploadRouter);
 app.use('/api/v1/review', reviewRouter);
+app.use('/api/v1/order-item', orderItemRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
