@@ -28,6 +28,9 @@ const updateUser = async (req, res) => {
         throw new CustomError.BadRequestError("Please provide name and email.");
     }
     const user = await User.findOne({_id: req.user.userId});
+    if(user.googleId || user.facebookId){
+        throw new CustomError.BadRequestError("Can't update!");
+    }
     user.name = name;
     user.email = email;
     await user.save();
@@ -36,7 +39,6 @@ const updateUser = async (req, res) => {
 const adminUpdateUser = async (req, res) => {
     const {id: userId} = req.params;
     const {name, email, role, isActive=false} = req.body;
-    console.log({name, email, role, isActive});
     if(!name || !email || !role){
         throw new CustomError.BadRequestError("Please provide all fields");
     }
@@ -44,13 +46,17 @@ const adminUpdateUser = async (req, res) => {
     if(!user){
         throw new CustomError.NotFoundError(`No user width id : ${userId}`);
     }
-    user.name = name;
-    user.email = email;
-    user.role = role;
-    user.isActive = isActive;
+    if(user.googleId || user.facebookId){
+        user.isActive = isActive;
+    }else{
+        user.name = name;
+        user.email = email;
+        user.role = role;
+        user.isActive = isActive;
+    }
     await user.save();
     const tokenUser = createTokenUser(user);
-    res.status(StatusCodes.OK).json({user: tokenUser});
+    return res.status(StatusCodes.OK).json({user: tokenUser});
 }
 const updateUserPassword = async (req, res) => {
     const {oldPassword, newPassword} = req.body;
@@ -58,6 +64,9 @@ const updateUserPassword = async (req, res) => {
         throw new CustomError.BadRequestError("Please provide all value");
     }
     const user = await User.findOne({_id: req.user.userId});
+    if(user.googleId || user.facebookId){
+        throw new CustomError.BadRequestError("Can't update password!");
+    }
     const isPasswordCorrect = await user.comparePassword(oldPassword);
     if(!isPasswordCorrect){
         throw new CustomError.UnauthenticatedError("Invalid Credentials");

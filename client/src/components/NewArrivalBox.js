@@ -23,8 +23,8 @@ const NewArrivalBox = () => {
                     speed={1000}
                     spaceBetween={30}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
                     autoplay={{
                         delay: 3000,

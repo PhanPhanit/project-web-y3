@@ -6,7 +6,6 @@ import FacebookLogo from '../images/facebook.png';
 import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
 import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import {useUserContext} from '../context/user_context';
 import {useNavigate} from 'react-router-dom';
@@ -31,13 +30,17 @@ const Signin = () => {
         try {
             const {data} = await axios.post('/api/v1/auth/login', inputValue);
             saveUser(data.user);
-            toast.success("Login success!",{position: toast.POSITION.TOP_CENTER})
+            setInputValue({email: '', password: ''});
+            toast.success("Sign in successfully!")
             navigate('/')
         } catch (error) {
-            toast.error("Email or password is not correct!",{position: toast.POSITION.TOP_CENTER})
+            toast.error("Email or password is not correct!")
             removeUser();
         }
         setLoading(false);
+    }
+    const googleLogin = () => {
+        window.open("https://wsb-server.herokuapp.com/api/v1/auth/google", "_self");
     }
     return (
         <section id="signin-signup-section" className="font-poppin">
@@ -105,7 +108,7 @@ const Signin = () => {
                     <div className="social">
                         <h3>Login</h3>
                         <div className="social-btn">
-                            <button type="button" className="btn-social-media">
+                            <button type="button" className="btn-social-media" onClick={googleLogin}>
                                 <img src={GoogleLogo} alt="Google Logo" />
                                 <span>Sign in with Google</span>
                             </button>

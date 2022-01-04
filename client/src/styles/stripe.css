@@ -7,7 +7,7 @@
     min-width: 500px;
     align-self: center;
     border-radius: 7px;
-    padding: 40px;
+    padding: 40px 15px;
   }
   
   .stript-wrapper form > .total-price{

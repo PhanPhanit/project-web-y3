@@ -25,6 +25,8 @@ const UserProvider = ({children}) => {
     }
 
     return <UserContext.Provider value={{
+        loading,
+        myUser,
         saveUser,
         removeUser
     }}>{children}</UserContext.Provider>

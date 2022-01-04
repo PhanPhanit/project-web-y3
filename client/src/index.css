@@ -109,3 +109,18 @@ a{
 .Toastify__toast-container{
   z-index: 100005 !important;
 }
+
+/* loading page */
+.app-loading{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F7F6;
+}
+.app-loading img{
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}

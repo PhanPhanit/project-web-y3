@@ -7,8 +7,10 @@ import '../styles/navbars.css';
 import {NavbarData} from './utils/NavbarData';
 import {Link as LinkScroll} from 'react-scroll';
 import {useActionContext} from '../context/action_context'
+import {useUserContext} from '../context/user_context';
 
 function Navbar() {
+    const {myUser} = useUserContext();
     const {openSidebar, accountSettingClick, historyClick} = useActionContext(); 
     return (
         <header>
@@ -74,30 +76,36 @@ function Navbar() {
                 <div className="right-menu">
                     <ul>
                         <li>
-                            <div className="user-icon">
-                                <FaUserAlt />
+                            {
+                                myUser? (
+                                    <div className="user-icon">
+                                        <FaUserAlt />
 
-                                {/* user hover */}
+                                        {/* user hover */}
 
-                                <div className="user-hower">
-                                    <div className="arrow-top"></div>
-                                    <div className="header">
-                                        <h4>Phan Phanit</h4>
-                                        <span>phanit12@gmail.com</span>
+                                        <div className="user-hower">
+                                            <div className="arrow-top"></div>
+                                            <div className="header">
+                                                <h4>{myUser.name}</h4>
+                                                <span>phanit12@gmail.com</span>
+                                            </div>
+                                            <div className="body">
+                                                <Link className="link" to="/profile" onClick={accountSettingClick}>My Profile</Link>
+                                                <Link className="link" to="/profile" onClick={historyClick}>History</Link>
+                                            </div>
+                                            <div className="footer">
+                                                <Link to="/" className="logout-txt">Logout</Link>
+                                                <FiLogOut className="logout-txt" />
+                                            </div>
+                                        </div>
+
+                                        {/* end user hover */}
+
                                     </div>
-                                    <div className="body">
-                                        <Link className="link" to="/profile" onClick={accountSettingClick}>My Profile</Link>
-                                        <Link className="link" to="/profile" onClick={historyClick}>History</Link>
-                                    </div>
-                                    <div className="footer">
-                                        <Link to="/" className="logout-txt">Logout</Link>
-                                        <FiLogOut className="logout-txt" />
-                                    </div>
-                                </div>
-
-                                {/* end user hover */}
-
-                            </div>
+                                ):(
+                                    <Link to="/signin" className="btn-signin">Sign In</Link>
+                                )
+                            }
                         </li>
                         <li>
                             <Link className="link-cart" to="/cart">
