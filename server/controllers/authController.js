@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const {StatusCodes} = require('http-status-codes');
-const {createTokenUser, attackCookiesToResponse} = require('../utils');
+const {createTokenUser, attackCookiesToResponse, createJWT} = require('../utils');
 const CustomError = require('../errors');
 
 
@@ -53,11 +53,15 @@ const googleLogin = (req, res) => {
             httpOnly: true,
             expires: new Date(Date.now())
         });
-        res.redirect('http://localhost:3000/signin');
+        res.redirect(`${process.env.DOMAIN_FRONT_END}/signin`);
     }else{
+        // const tokenUser = createTokenUser(req.user);
+        // attackCookiesToResponse({res, user:tokenUser});
+        // res.redirect(`${process.env.DOMAIN_FRONT_END}`)
+
         const tokenUser = createTokenUser(req.user);
-        attackCookiesToResponse({res, user:tokenUser});
-        res.redirect('http://localhost:3000')
+        const token = createJWT({payload: tokenUser});
+        res.redirect(`${process.env.DOMAIN_FRONT_END}/send-token?token=${token}`);
     }
 }
 const logout = async (req, res) => {

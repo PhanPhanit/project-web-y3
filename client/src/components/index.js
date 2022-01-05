@@ -18,6 +18,7 @@ import ProfileAccount from "./ProfileAccount";
 import ProfileHistory from "./ProfileHistory";
 import Feedback from './Feedback';
 import Checkout from "./Checkout";
+import SendToken from "./SendToken";
 
 export {
     Footer,
@@ -39,5 +40,6 @@ export {
     ProfileAccount,
     ProfileHistory,
     Feedback,
-    Checkout
+    Checkout,
+    SendToken
 }

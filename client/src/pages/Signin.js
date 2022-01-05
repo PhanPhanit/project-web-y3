@@ -39,8 +39,11 @@ const Signin = () => {
         }
         setLoading(false);
     }
-    const googleLogin = () => {
+    const googleLogin = async () => {
         window.open("https://wsb-server.herokuapp.com/api/v1/auth/google", "_self");
+    }
+    const facebookLogin = async () => {
+        window.open("https://wsb-server.herokuapp.com/api/v1/auth/facebook", "_self");
     }
     return (
         <section id="signin-signup-section" className="font-poppin">
@@ -112,7 +115,7 @@ const Signin = () => {
                                 <img src={GoogleLogo} alt="Google Logo" />
                                 <span>Sign in with Google</span>
                             </button>
-                            <button type="button" className="btn-social-media">
+                            <button type="button" className="btn-social-media" onClick={facebookLogin}>
                                 <img src={FacebookLogo} alt="Facebook Logo" />
                                 <span>Sign in with Facebook</span>
                             </button>

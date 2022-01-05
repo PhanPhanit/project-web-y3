@@ -298,11 +298,13 @@ header .right-menu .user-icon .user-hower .header{
     width: 100%;
 }
 header .right-menu .user-icon .user-hower .header h4{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    word-break: break-all;
 }
 header .right-menu .user-hower .header span{
     font-size: 1rem;
     opacity: 0.9;
+    word-break: break-all;
 }
 header .right-menu .user-hower .body{
     margin: 1rem 0;
