@@ -1,14 +1,20 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import ReadBook from '../images/read-book.png'
 import GoogleLogo from '../images/google.png';
 import FacebookLogo from '../images/facebook.png';
 import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
+import axios from 'axios';
+import {toast} from 'react-toastify';
+import {useUserContext} from '../context/user_context';
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const {saveUser} = useUserContext();
     const [showPassword, setShowPassword] = useState(false);
     const [btnDisable, setBtnDisable] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [inputValue, setInputValue] = useState({
         fullName: '',
         email: '',
@@ -19,6 +25,32 @@ const Signup = () => {
         const value = e.target.value;
         setInputValue({...inputValue, [name]: value});
     }
+
+    // form submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setBtnDisable(true);
+        setLoading(true);
+        try {
+            const {data} = await axios.post('/api/v1/auth/register', {...inputValue, name: inputValue.fullName});
+            saveUser(data.tokenUser);
+            toast.success("Registration succeed.");
+            navigate('/');
+            setInputValue({
+                fullName: '',
+                email: '',
+                password: ''
+            })
+        } catch (error) {
+            toast.error("Please register again");
+            console.log(error);
+        }
+        setBtnDisable(false);
+        setLoading(false);
+    }
+
+
+
     useEffect(()=>{
         const emailRegex = /^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/;
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
@@ -47,7 +79,7 @@ const Signup = () => {
                         </div>
                         <span>Let create your account and visit your favorite books!!</span>
                     </div>
-                    <form className="frm">
+                    <form className="frm" onSubmit={handleSubmit}>
                         <h3>Sign Up</h3>
                         <div className="frm-control">
                             <label htmlFor="full-name">Full Name</label>
@@ -109,7 +141,10 @@ const Signup = () => {
                                 className="btn-submit"
                                 style={{pointerEvents: btnDisable?"none":"auto", opacity: btnDisable?"0.6":"1"}}
                                 >
-                                    Get Started
+                                    {
+                                        loading && <div className="spinner-load"></div>
+                                    }
+                                    <span>Get Started</span>
                             </button>
                             <p><span>Alread have account?</span> <Link to="/signin">Sign in</Link></p>
                         </div>

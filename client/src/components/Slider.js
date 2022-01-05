@@ -14,8 +14,8 @@ const Slider = () => {
             <Swiper
                 className="slide-wrapper"
                 spaceBetween={50}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
+                // onSwiper={(swiper) => console.log(swiper)}
                 loop={true}
                 autoplay={{
                     delay: 3000,

@@ -93,7 +93,8 @@ const starPercent = async (req, res) => {
         return total;
     }, 0)
     const percentStar = review.map((item)=>{
-        const percent = item.count / totalReview;
+        let percent = (item.count / totalReview) * 100;
+        percent = percent.toFixed(2);
         return {star: item._id, count: item.count, percent};
     })
     res.status(StatusCodes.OK).json({percentStar, totalReview});

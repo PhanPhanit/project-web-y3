@@ -167,6 +167,10 @@
     outline: none;
     border-radius: 5px;
     font-size: 16px;
+    padding-right: 35px;
+}
+#signin-signup-section .sign-wrapper .right .frm .frm-control .input input:invalid{
+    border: 1px solid red;
 }
 #signin-signup-section .sign-wrapper .right .frm .frm-control .input input:invalid + .error-msg{
     display: block;

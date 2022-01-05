@@ -6,22 +6,27 @@ const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Please provide name'],
+        trim: true,
         minlength: 3,
         maxlength: 50
     },
     email: {
         type: String,
-        required: [true, 'Please provide email'],
-        validate: {
-            validator: validator.isEmail,
-            message: '{VALUE} is not valid email'
-        },
-        unique: true
+        trim: true,
+        unique: true,
+        default: ""
     },
     password: {
         type: String,
-        required: [true, 'Please provide password'],
-        minlength: 6
+        default: ""
+    },
+    googleId: {
+        type: String,
+        default: ""
+    },
+    facebookId: {
+        type: String,
+        default: ""
     },
     role: {
         type: String,
