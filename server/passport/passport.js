@@ -9,7 +9,7 @@ const User = require('../models/User');
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:5000/api/v1/auth/google/callback"
+    callbackURL: `${process.env.DOMAIN_SERVER}/api/v1/auth/google/callback`
   },
   async function(accessToken, refreshToken, profile, done){
     const {id:googleId, displayName:name, emails:[{value: email}]} = profile;
@@ -46,7 +46,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "http://localhost:5000/auth/facebook/callback"
+  callbackURL: `${process.env.DOMAIN_SERVER}/api/v1/auth/facebook/callback`
 },
 async function(accessToken, refreshToken, profile, done) {
     done(null, profile)

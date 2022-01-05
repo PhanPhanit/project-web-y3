@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartPage, Category, Home, Profile, ViewBook, Error, Signup, Signin } from "./pages";
-import { Navbar, Sidebar, Footer, Feedback, Checkout } from "./components";
+import { Navbar, Sidebar, Footer, Feedback, Checkout, SendToken } from "./components";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthWrapper from "./components/AuthWrapper";
@@ -24,6 +24,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/viewbook/:id" element={<ViewBook />} />
+          <Route path="/send-token" element={<SendToken />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

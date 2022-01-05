@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineShopping} from 'react-icons/ai';
 import {FiLogOut, FiMenu} from 'react-icons/fi';
 import {FaUserAlt} from 'react-icons/fa';
@@ -8,10 +8,23 @@ import {NavbarData} from './utils/NavbarData';
 import {Link as LinkScroll} from 'react-scroll';
 import {useActionContext} from '../context/action_context'
 import {useUserContext} from '../context/user_context';
+import axios from 'axios';
+import {toast} from 'react-toastify';
 
 function Navbar() {
-    const {myUser} = useUserContext();
-    const {openSidebar, accountSettingClick, historyClick} = useActionContext(); 
+    const navigate = useNavigate();
+    const {myUser, removeUser} = useUserContext();
+    const {openSidebar, accountSettingClick, historyClick} = useActionContext();
+    const handleLogout = async () => {
+        try {
+            await axios.get('/api/v1/auth/logout');
+            removeUser();
+            navigate("/");
+            toast.success("Logout successfully.");
+        } catch (error) {
+            toast.success("Logout error.");
+        }
+    }
     return (
         <header>
             {/* Header */}
@@ -87,15 +100,15 @@ function Navbar() {
                                             <div className="arrow-top"></div>
                                             <div className="header">
                                                 <h4>{myUser.name}</h4>
-                                                <span>phanit12@gmail.com</span>
+                                                <span>{myUser.email}</span>
                                             </div>
                                             <div className="body">
                                                 <Link className="link" to="/profile" onClick={accountSettingClick}>My Profile</Link>
                                                 <Link className="link" to="/profile" onClick={historyClick}>History</Link>
                                             </div>
                                             <div className="footer">
-                                                <Link to="/" className="logout-txt">Logout</Link>
-                                                <FiLogOut className="logout-txt" />
+                                                <span className="logout-txt" onClick={handleLogout}>Logout</span>
+                                                <FiLogOut onClick={handleLogout} className="logout-txt" />
                                             </div>
                                         </div>
 

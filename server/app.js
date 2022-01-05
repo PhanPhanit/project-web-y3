@@ -33,6 +33,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const orderItemRouter = require('./routes/orderItemRoutes');
 const orderRouter = require('./routes/orderRoutes');
 const slideRouter = require('./routes/slideRoutes');
+const cookieRouter = require('./routes/cookieRoutes');
 // middleware
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -44,9 +45,6 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(fileUpload({useTempFiles: true}));
-app.get('/', (req, res)=>{
-    res.send('Home Page');
-})
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/category', categoryRouter);
@@ -57,6 +55,7 @@ app.use('/api/v1/review', reviewRouter);
 app.use('/api/v1/order-item', orderItemRouter);
 app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/slide', slideRouter);
+app.use('/api/v1/response-cookie', cookieRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

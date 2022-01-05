@@ -17,9 +17,19 @@ const attackCookiesToResponse = ({res, user}) => {
         signed: true
     })
 }
+const cookiesResponse = ({res, token}) => {
+    const oneDay = 1000 * 60 * 60 * 24;
+    res.cookie('wsbToken', token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + oneDay),
+        secure: process.env.NODE_ENV === 'production',
+        signed: true
+    })
+}
 
 module.exports = {
     createJWT,
     isTokenValid,
-    attackCookiesToResponse
+    attackCookiesToResponse,
+    cookiesResponse
 }
