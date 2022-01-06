@@ -8,9 +8,16 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import ReactStars from "react-rating-stars-component";
 import '../styles/newArrivalBox.css'
+import {useProductContext} from '../context/product_context';
+import {formatMoney, numberWithCommas} from '../utils/Tools';
 
 const NewArrivalBox = () => {
     SwiperCore.use([Autoplay]);
+    const {new_arrival: {
+        product_new_arrival,
+        loading,
+        error
+    }} = useProductContext();
     return (
         <section className="section-white">
             <div className="wrapper-global wrapper-arrive">
@@ -54,10 +61,59 @@ const NewArrivalBox = () => {
                         }
                     }}
                     >
+                        {
+                            product_new_arrival.map(item=>{
+                                const {
+                                    name,
+                                    image,
+                                    price,
+                                    discount,
+                                    author,
+                                    sold,
+                                    numOfReviews,
+                                    averageRating
+                                } = item;
+                                const sortName = name.length >= 45 ? name.substring(0, 45)+"...":name;
+                                return (
+                                    <SwiperSlide className="box-arrive">
+                                        <Link to="/viewbook/123">
+                                            <img src={image[0]} alt="Yuri Herrera" />
+                                        </Link>
+                                        <div className="info">
+                                            <h4 className="title">
+                                                <Link to="/viewbook/123" className="link-none font-title">{sortName}</Link>
+                                            </h4>
+                                            <span className="author">{author}</span>
+                                            <div className="sold-dis">
+                                                <div className="sold">
+                                                    <MdOutlineSell /><span>{numberWithCommas(sold)} sold</span>
+                                                </div>
+                                                <div className="dis-price">{discount===0?"":formatMoney(discount)}</div>
+                                            </div>
+                                            <div className="star-price">
+                                                <div className="star">
+                                                    <ReactStars
+                                                        classNames="star-icon"
+                                                        value={averageRating}
+                                                        isHalf={true}
+                                                        edit={false}
+                                                        />
+                                                    <span>{numberWithCommas(numOfReviews)}</span>
+                                                </div>
+                                                <div className="price">{formatMoney(price - discount)}</div>
+                                            </div>
+                                            <div className="add-cart">
+                                                <Link to="/cart" className="btn-add-cart">
+                                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                );
+                            })
+                        }
 
-
-
-                    <SwiperSlide className="box-arrive">
+                    {/* <SwiperSlide className="box-arrive">
                         <Link to="/viewbook/123">
                             <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
                         </Link>
@@ -90,252 +146,7 @@ const NewArrivalBox = () => {
                                 </Link>
                             </div>
                         </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="box-arrive">
-                        <Link to="/viewbook/123">
-                            <img src="https://m.media-amazon.com/images/I/51G+WN7UghL.jpg" alt="Yuri Herrera" />
-                        </Link>
-                        <div className="info">
-                            <h4 className="title">
-                                <Link to="/viewbook/123" className="link-none font-title">Yuri Herreradsfewfewfewfefewfewfefewfewfwfew</Link>
-                            </h4>
-                            <span className="author">Transi Ated</span>
-                            <div className="sold-dis">
-                                <div className="sold">
-                                    <MdOutlineSell /><span>200 sold</span>
-                                </div>
-                                <div className="dis-price">$24.99</div>
-                            </div>
-                            <div className="star-price">
-                                <div className="star">
-                                    <ReactStars
-                                        classNames="star-icon"
-                                        value={3.7}
-                                        isHalf={true}
-                                        edit={false}
-                                        />
-                                    <span>39,210</span>
-                                </div>
-                                <div className="price">$29.99</div>
-                            </div>
-                            <div className="add-cart">
-                                <Link to="/cart" className="btn-add-cart">
-                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-
-
-
-
-
-
-
+                    </SwiperSlide> */}
                     
                 </Swiper>
             </div>

@@ -10,6 +10,9 @@
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    height: 550px;
+    display: flex;
+    flex-direction: column;
 }
 @media screen and (max-width: 1340px) {
     .all-favor-book{
@@ -41,6 +44,10 @@
 .all-favor-book .favor-box .info{
     width: 100%;
     padding: 8px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .all-favor-book .favor-box .info .title{
     width: 100%;
@@ -111,7 +118,7 @@
 /* btn add to cart */
 .all-favor-book .favor-box .info .add-cart{
     width: 100%;
-    margin-top: 15px;
+    margin-top: auto;
     display: flex;
     justify-content: center;
 }
@@ -141,4 +148,12 @@
     .all-favor-book .favor-box .info .add-cart{
         margin-bottom: 10px;
     }
+}
+
+.loading-all-favor-boox{
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
 }

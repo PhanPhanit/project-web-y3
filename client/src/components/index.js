@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Slider from "./Slider";
 import CategoryTitle from "./CategoryTitle";
-import CategorySection from "./CategorySection";
+import CategoryHome from "./CategoryHome";
+import CategorySection from './CategorySection';
 import NewArrivalBox from "./NewArrivalBox";
 import AllFavorBook from "./AllFavorBook"
 import AllFavorBookBox from "./AllFavorBookBox";
@@ -19,6 +20,7 @@ import ProfileHistory from "./ProfileHistory";
 import Feedback from './Feedback';
 import Checkout from "./Checkout";
 import SendToken from "./SendToken";
+import PrivateRoute from "./PrivateRoute";
 
 export {
     Footer,
@@ -26,6 +28,7 @@ export {
     Sidebar,
     Slider,
     CategoryTitle,
+    CategoryHome,
     CategorySection,
     NewArrivalBox,
     AllFavorBook,
@@ -41,5 +44,6 @@ export {
     ProfileHistory,
     Feedback,
     Checkout,
-    SendToken
+    SendToken,
+    PrivateRoute
 }

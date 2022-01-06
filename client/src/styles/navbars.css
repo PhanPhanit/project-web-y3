@@ -245,7 +245,7 @@ header .right-menu ul li .btn-signin:hover{
         font-size: 14px;
     }
 }
-header .right-menu ul li:nth-child(1) .user-icon{
+header .right-menu ul li.li-user .user-icon{
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -257,7 +257,7 @@ header .right-menu ul li:nth-child(1) .user-icon{
     align-items: center;
     cursor: pointer;
 }
-header .right-menu ul li:nth-child(3){
+header .right-menu ul li.li-menu-button{
     display: none;
     justify-content: center;
     align-items: center;
@@ -340,7 +340,7 @@ header .right-menu .user-hower .logout-txt:first-child:hover{
 /* end user hover */
 
 /* cart */
-header .right-menu ul li:nth-child(2){
+header .right-menu ul li.li-cart{
     font-size: 35px;
     display: flex;
     justify-content: center;
@@ -348,13 +348,13 @@ header .right-menu ul li:nth-child(2){
     cursor: pointer;
     position: relative;
 }
-header .right-menu ul li:nth-child(2) .link-cart{
+header .right-menu ul li.li-cart .link-cart{
     color: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header .right-menu ul li:nth-child(2) span{
+header .right-menu ul li.li-cart span{
     position: absolute;
     font-size: 16px;
     top: 10px;
@@ -372,7 +372,7 @@ header .right-menu ul li:nth-child(2) span{
 /* end cart */
 
 @media screen and (max-width: 1040px){
-    header .right-menu ul li:nth-child(1) .user-icon{
+    header .right-menu ul li.li-user .user-icon{
         width: 35px;
         height: 35px;
     }
@@ -380,20 +380,20 @@ header .right-menu ul li:nth-child(2) span{
         padding: 15px 20px;
         font-size: 18px;
     }
-    header .right-menu ul li:nth-child(2){
+    header .right-menu ul li.li-cart{
         font-size: 35px;
     }
-    header .right-menu ul li:nth-child(2) span{
+    header .right-menu ul li.li-cart span{
         font-size: 14px;
         width: 25px;
         height: 25px;
     }
 }
 @media screen and (max-width: 930px){
-    header .right-menu ul li:nth-child(1){
+    header .right-menu ul li.li-user{
         display: none;
     }
-    header .right-menu ul li:nth-child(3){
+    header .right-menu ul li.li-menu-button{
         display: flex;
     }
  }
