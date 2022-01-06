@@ -3,35 +3,46 @@ import {Link} from 'react-router-dom';
 import {MdOutlineSell} from 'react-icons/md';
 import {FaShoppingBag} from 'react-icons/fa';
 import ReactStars from "react-rating-stars-component";
+import {sortName, formatMoney, numberWithCommas} from '../utils/Tools';
 
-const AllFavorBookBox = () => {
+const AllFavorBookBox = (props) => {
+    const {
+        name,
+        author,
+        averageRating,
+        numOfReviews,
+        sold,
+        price,
+        discount,
+        image
+    } = props;
     return (
         <div className="favor-box">
                 <Link to="/viewbook/122333">
-                    <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SL1000_.jpg" alt="book" />
+                    <img src={image[0]} alt={name} />
                 </Link>
                 <div className="info">
                     <h4 className="title">
-                        <Link to="/viewbook/123" className="link-none font-title">How to Draw Cool Stuff: A Drawing Guide for</Link>
+                        <Link to="/viewbook/123" className="link-none font-title">{sortName(name, 45)}</Link>
                     </h4>
-                    <span className="author">Transi Ated</span>
+                    <span className="author">{author}</span>
                     <div className="sold-dis">
                         <div className="sold">
-                            <MdOutlineSell /><span>200 sold</span>
+                            <MdOutlineSell /><span>{numberWithCommas(sold)} sold</span>
                         </div>
-                        <div className="dis-price">$24.99</div>
+                        <div className="dis-price">{discount===0?"":formatMoney(discount)}</div>
                     </div>
                     <div className="star-price">
                         <div className="star">
                             <ReactStars
                                 classNames="star-icon"
-                                value={3.7}
+                                value={averageRating}
                                 isHalf={true}
                                 edit={false}
                                 />
-                            <span>39,210</span>
+                            <span>{numberWithCommas(numOfReviews)}</span>
                         </div>
-                        <div className="price">$29.99</div>
+                        <div className="price">{formatMoney(price)}</div>
                     </div>
                     <div className="add-cart">
                         <Link to="/cart" className="btn-add-cart">

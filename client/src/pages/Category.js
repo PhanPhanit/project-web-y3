@@ -1,14 +1,20 @@
 import React from 'react'
+import {useCategoryContext} from '../context/category_context';
 import {
     Slider,
     CategoryTitle,
-    CategorySection,
     AllFavorBook,
     PaginationReact,
+    CategorySection
 } from '../components'
+import {Error} from '../pages';
 
 
 function Category() {
+    const {category_exist} = useCategoryContext();
+    if(!category_exist){
+        return <Error />
+    }
     return (
         <>
             <Slider />

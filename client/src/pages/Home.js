@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Slider,
     CategoryTitle,
-    CategorySection,
+    CategoryHome,
     NewArrivalBox,
     AllFavorBook,
     PaginationReact,
@@ -15,7 +15,7 @@ function Home() {
         <>
             <Slider />
             <CategoryTitle title="Categories"/>
-            <CategorySection />
+            <CategoryHome />
             <NewArrivalBox />
             <CategoryTitle title="All Favorite Books"/>
             <AllFavorBook />

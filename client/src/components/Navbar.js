@@ -88,7 +88,7 @@ function Navbar() {
 
                 <div className="right-menu">
                     <ul>
-                        <li>
+                        <li className="li-user">
                             {
                                 myUser? (
                                     <div className="user-icon">
@@ -120,13 +120,17 @@ function Navbar() {
                                 )
                             }
                         </li>
-                        <li>
-                            <Link className="link-cart" to="/cart">
-                                <AiOutlineShopping />
-                                <span>0</span>
-                            </Link>
-                        </li>
-                        <li>
+                        {
+                            myUser && (
+                                <li className="li-cart">
+                                    <Link className="link-cart" to="/cart">
+                                        <AiOutlineShopping />
+                                        <span>0</span>
+                                    </Link>
+                                </li>
+                            )
+                        }
+                        <li className="li-menu-button">
                             <FiMenu className="btn-menu" onClick={openSidebar} />
                         </li>
                     </ul>
