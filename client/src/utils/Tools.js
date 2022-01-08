@@ -1,6 +1,6 @@
 // convert money ======================================================
 function formatMoney(n) {
-    return '$ ' + n.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    return '$' + n.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

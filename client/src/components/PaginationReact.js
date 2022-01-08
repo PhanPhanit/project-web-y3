@@ -23,7 +23,7 @@ const PaginationReact = () => {
             <Stack spacing={2}>
                 <Pagination
                     count={total_page}
-                    defaultPage={current_page}
+                    page={current_page}
                     onChange={getPage}
                     renderItem={(item) => (
                         <PaginationItem
@@ -39,5 +39,6 @@ const PaginationReact = () => {
         </div>
     )
 }
+
 
 export default PaginationReact

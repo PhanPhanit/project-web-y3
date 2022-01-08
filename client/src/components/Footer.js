@@ -77,28 +77,28 @@ function Footer() {
       <div className="section2">
         <ul>
           <li>
-            <a href={() => false}>
+            <a>
               <BsGithub />
             </a>
           </li>
 
           <li>
-            <a href={() => false}>
+            <a>
               <BsFacebook />
             </a>
           </li>
           <li>
-            <a href={() => false}>
+            <a>
               <AiFillInstagram />
             </a>
           </li>
           <li>
-            <a href={() => false}>
+            <a>
               <AiOutlineTwitter />
             </a>
           </li>
           <li>
-            <a href={() => false}>
+            <a>
               <BsYoutube />
             </a>
           </li>

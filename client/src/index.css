@@ -134,15 +134,18 @@ a{
 .lds-ring {
   display: inline-block;
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: 8px;
   border: 10px solid #fff;
   border-radius: 50%;
@@ -165,4 +168,13 @@ a{
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* single product loading */
+
+.full-screen-wrapper{
+  height: calc(100vh - 74px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

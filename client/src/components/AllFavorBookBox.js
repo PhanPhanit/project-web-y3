@@ -7,6 +7,7 @@ import {sortName, formatMoney, numberWithCommas} from '../utils/Tools';
 
 const AllFavorBookBox = (props) => {
     const {
+        _id: productId,
         name,
         author,
         averageRating,
@@ -18,12 +19,12 @@ const AllFavorBookBox = (props) => {
     } = props;
     return (
         <div className="favor-box">
-                <Link to="/viewbook/122333">
+                <Link to={`/viewbook/${productId}`}>
                     <img src={image[0]} alt={name} />
                 </Link>
                 <div className="info">
                     <h4 className="title">
-                        <Link to="/viewbook/123" className="link-none font-title">{sortName(name, 45)}</Link>
+                        <Link to={`/viewbook/${productId}`} className="link-none font-title">{sortName(name, 45)}</Link>
                     </h4>
                     <span className="author">{author}</span>
                     <div className="sold-dis">

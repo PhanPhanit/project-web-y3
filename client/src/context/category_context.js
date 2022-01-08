@@ -39,6 +39,7 @@ const CategoryProvider = ({children}) => {
         dispatch({type: SET_CATEGORY_ID, payload: id});
     }
 
+
     useEffect(()=>{
         fetchCategory();
     }, []);

@@ -17,7 +17,7 @@ const ViewBookSlide = () => {
                     speed={500}
                     spaceBetween={30}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
+                    // onSlideChange={() => console.log('slide change')}
                     // onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
                     navigation={true}
