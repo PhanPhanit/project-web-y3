@@ -13,7 +13,10 @@ import {
     SET_NEW_ARRIVAL_PAGE,
     SET_SINGLE_PRODUCT_LOADING,
     SET_SINGLE_PRODUCT_ERROR,
-    SET_SINGLE_PRODUCT
+    SET_SINGLE_PRODUCT,
+    SET_LOADING_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT_ERROR
 } from '../action';
 
 const initailState = {
@@ -31,6 +34,16 @@ const initailState = {
     },
     single_product: {
         product: {},
+        loading: true,
+        error: false
+    },
+    suggestion_product: {
+        product: [],
+        loading: false,
+        error: false
+    },
+    people_looking_product: {
+        product: [],
         loading: false,
         error: false
     }
@@ -72,10 +85,29 @@ const ProductProvider = ({children}) => {
             const {data: {product}} = await axios.get(url);
             dispatch({type: SET_SINGLE_PRODUCT, payload: product});
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: false});
+            dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
+            // fetch suggestion product and people looking
+            fetchSuggestionProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-sold`);
+            fetchPeopleLookingProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-views`);
         } catch (error) {
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: true});
+            dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
         }
-        dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
+    }
+
+    const fetchSuggestionProduct = async (url) => {
+        dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: true})
+        try {
+            const {data:{product}} = await axios.get(url);
+            dispatch({type: SET_SUGGESTION_PRODUCT, payload: product});
+            dispatch({type: SET_SUGGESTION_PRODUCT_ERROR, payload: false})
+        } catch (error) {
+            dispatch({type: SET_SUGGESTION_PRODUCT_ERROR, payload: true})
+        }
+        dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: false})
+    }
+    const fetchPeopleLookingProduct = async (url) => {
+        console.log("fetch people looking product");
     }
 
     const setNewArrivalPage = (page) => {
@@ -103,7 +135,9 @@ const ProductProvider = ({children}) => {
     return <ProductContext.Provider value={{
         ...state,
         setNewArrivalPage,
-        fetchSingleProduct
+        fetchSingleProduct,
+        fetchSuggestionProduct,
+        fetchPeopleLookingProduct
     }}>{children}</ProductContext.Provider>
 }
 

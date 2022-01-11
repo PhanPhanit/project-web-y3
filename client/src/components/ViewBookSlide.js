@@ -7,9 +7,15 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import ReactStars from "react-rating-stars-component";
 import '../styles/viewBookSlide.css'
+import SlideLoading from './SlideLoading';
 
 const ViewBookSlide = () => {
     SwiperCore.use([Navigation]);
+    if(true){
+        return (
+            <SlideLoading />
+        );
+    }
     return (
             <div className="wrapper-global view-book-slide">
                 <Swiper

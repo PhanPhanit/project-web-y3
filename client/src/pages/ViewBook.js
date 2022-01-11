@@ -11,13 +11,21 @@ import {
 
 function ViewBook() {
     const {id: productId} = useParams();
-    const {fetchSingleProduct, single_product: {loading, error}} = useProductContext();
+    const {
+        fetchSingleProduct,
+        single_product: {
+            product,
+            loading,
+            error
+        },
+    } = useProductContext();
     useEffect(()=>{
         window.scroll({
             top: 0
           });
         fetchSingleProduct(`/api/v1/product/${productId}`);
     }, [productId]);
+    
     if(loading){
         return (
             <section className="full-screen-wrapper wrapper-global">

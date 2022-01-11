@@ -8,7 +8,10 @@ import {
     SET_NEW_ARRIVAL_PAGE,
     SET_SINGLE_PRODUCT_LOADING,
     SET_SINGLE_PRODUCT_ERROR,
-    SET_SINGLE_PRODUCT
+    SET_SINGLE_PRODUCT,
+    SET_LOADING_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT_ERROR
 } from '../action';
 const product_reducer = (state, action) => {
     if(action.type===NEW_ARRIVAL_SET_ERROR){
@@ -69,6 +72,33 @@ const product_reducer = (state, action) => {
             ...state,
             single_product: {
                 ...state.single_product,
+                product: action.payload
+            }
+        }
+    }
+    if(action.type === SET_LOADING_SUGGESTION_PRODUCT){
+        return {
+            ...state,
+            suggestion_product: {
+                ...state.suggestion_product,
+                loading: action.payload
+            }
+        }
+    }
+    if(action.type === SET_SUGGESTION_PRODUCT_ERROR){
+        return {
+            ...state,
+            suggestion_product: {
+                ...state.suggestion_product,
+                error: action.payload
+            }
+        }
+    }
+    if(action.type === SET_SUGGESTION_PRODUCT){
+        return {
+            ...state,
+            suggestion_product: {
+                ...state.suggestion_product,
                 product: action.payload
             }
         }
