@@ -64,6 +64,7 @@ const NewArrivalBox = () => {
                         {
                             product_new_arrival.map(item=>{
                                 const {
+                                    _id: productId,
                                     name,
                                     image,
                                     price,
@@ -75,13 +76,13 @@ const NewArrivalBox = () => {
                                 } = item;
                                 const sortName = name.length >= 45 ? name.substring(0, 45)+"...":name;
                                 return (
-                                    <SwiperSlide className="box-arrive">
-                                        <Link to="/viewbook/123">
+                                    <SwiperSlide key={productId} className="box-arrive">
+                                        <Link to={`/viewbook/${productId}`}>
                                             <img src={image[0]} alt="Yuri Herrera" />
                                         </Link>
                                         <div className="info">
                                             <h4 className="title">
-                                                <Link to="/viewbook/123" className="link-none font-title">{sortName}</Link>
+                                                <Link to={`/viewbook/${productId}`} className="link-none font-title">{sortName}</Link>
                                             </h4>
                                             <span className="author">{author}</span>
                                             <div className="sold-dis">

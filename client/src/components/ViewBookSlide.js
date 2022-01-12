@@ -7,9 +7,15 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import ReactStars from "react-rating-stars-component";
 import '../styles/viewBookSlide.css'
+import SlideLoading from './SlideLoading';
 
 const ViewBookSlide = () => {
     SwiperCore.use([Navigation]);
+    if(true){
+        return (
+            <SlideLoading />
+        );
+    }
     return (
             <div className="wrapper-global view-book-slide">
                 <Swiper
@@ -17,7 +23,7 @@ const ViewBookSlide = () => {
                     speed={500}
                     spaceBetween={30}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
+                    // onSlideChange={() => console.log('slide change')}
                     // onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
                     navigation={true}

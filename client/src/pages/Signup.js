@@ -42,8 +42,10 @@ const Signup = () => {
                 password: ''
             })
         } catch (error) {
-            toast.error("Please register again");
-            console.log(error);
+            if(error.response){
+                const {msg} = error.response.data
+                toast.error(msg);
+            }
         }
         setBtnDisable(false);
         setLoading(false);

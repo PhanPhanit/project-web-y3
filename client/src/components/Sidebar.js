@@ -21,7 +21,7 @@ function Sidebar() {
                                 const {id, title, link} = item;
                                 if(item.link==='dropbox'){
                                     return (
-                                        <li className="parent-drop">
+                                        <li key={id} className="parent-drop">
                                             <a>{title}</a>
                                             <div className="dropbox">
                                                 <span>Khmer</span>
@@ -31,7 +31,7 @@ function Sidebar() {
                                     );
                                 }
                                 return (
-                                    <li>
+                                    <li key={id}>
                                         <LinkScroll to={link} spy={true} smooth={true} duration={1000}>
                                             {title}
                                         </LinkScroll>

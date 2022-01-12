@@ -1,5 +1,6 @@
 import React, {useContext, useReducer, useEffect} from 'react';
 import axios from 'axios';
+import {useCategoryContext} from './category_context';
 import reducer from '../reducers/product_reducer';
 
 import {
@@ -9,7 +10,13 @@ import {
     SET_LOADING_ALL_FAVOR_BOOK,
     SET_ERROR_ALL_FAVOR_BOOK,
     SET_PRODUCT_ALL_FAVOR_BOOK,
-    SET_NEW_ARRIVAL_PAGE
+    SET_NEW_ARRIVAL_PAGE,
+    SET_SINGLE_PRODUCT_LOADING,
+    SET_SINGLE_PRODUCT_ERROR,
+    SET_SINGLE_PRODUCT,
+    SET_LOADING_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT,
+    SET_SUGGESTION_PRODUCT_ERROR
 } from '../action';
 
 const initailState = {
@@ -24,6 +31,21 @@ const initailState = {
         error: false,
         total_page: 0,
         current_page: 1
+    },
+    single_product: {
+        product: {},
+        loading: true,
+        error: false
+    },
+    suggestion_product: {
+        product: [],
+        loading: false,
+        error: false
+    },
+    people_looking_product: {
+        product: [],
+        loading: false,
+        error: false
     }
 }
 
@@ -31,7 +53,7 @@ const initailState = {
 const ProductContext = React.createContext();
 const ProductProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initailState);
-
+    const {category_id} = useCategoryContext();
 
     const fetchProductNewArrive = async () => {
         dispatch({type: NEW_ARRIVAL_SET_LOADING, payload: true})
@@ -45,10 +67,10 @@ const ProductProvider = ({children}) => {
         dispatch({type: NEW_ARRIVAL_SET_LOADING, payload: false})
     }
 
-    const fetchProductAllFavorBook = async (page) => {
+    const fetchProductAllFavorBook = async (url) => {
         dispatch({type: SET_LOADING_ALL_FAVOR_BOOK, payload: true})
         try {
-            const {data} = await axios.get(`/api/v1/product?limit=15&page=${page}`);
+            const {data} = await axios.get(url);
             dispatch({type: SET_ERROR_ALL_FAVOR_BOOK, payload: false})
             dispatch({type: SET_PRODUCT_ALL_FAVOR_BOOK, payload: data});
         } catch (error) {
@@ -57,21 +79,65 @@ const ProductProvider = ({children}) => {
         dispatch({type: SET_LOADING_ALL_FAVOR_BOOK, payload: false})
     }
 
+    const fetchSingleProduct = async (url) => {
+        dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: true})
+        try {
+            const {data: {product}} = await axios.get(url);
+            dispatch({type: SET_SINGLE_PRODUCT, payload: product});
+            dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: false});
+            dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
+            // fetch suggestion product and people looking
+            fetchSuggestionProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-sold`);
+            fetchPeopleLookingProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-views`);
+        } catch (error) {
+            dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: true});
+            dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
+        }
+    }
+
+    const fetchSuggestionProduct = async (url) => {
+        dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: true})
+        try {
+            const {data:{product}} = await axios.get(url);
+            dispatch({type: SET_SUGGESTION_PRODUCT, payload: product});
+            dispatch({type: SET_SUGGESTION_PRODUCT_ERROR, payload: false})
+        } catch (error) {
+            dispatch({type: SET_SUGGESTION_PRODUCT_ERROR, payload: true})
+        }
+        dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: false})
+    }
+    const fetchPeopleLookingProduct = async (url) => {
+        console.log("fetch people looking product");
+    }
+
     const setNewArrivalPage = (page) => {
         dispatch({type: SET_NEW_ARRIVAL_PAGE, payload: page});
     }
 
     useEffect(()=>{
-        fetchProductAllFavorBook(state.all_favorit_book.current_page);
-    }, [state.all_favorit_book.current_page]);
+        let url = "";
+        if(category_id){
+            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&category=${category_id}`;
+        }else{
+            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}`;
+        }
+        fetchProductAllFavorBook(url);
+    }, [state.all_favorit_book.current_page, category_id]);
 
     useEffect(()=>{
         fetchProductNewArrive();
     }, []);
 
+    useEffect(()=>{
+        setNewArrivalPage(1);
+    }, [category_id])
+
     return <ProductContext.Provider value={{
         ...state,
-        setNewArrivalPage
+        setNewArrivalPage,
+        fetchSingleProduct,
+        fetchSuggestionProduct,
+        fetchPeopleLookingProduct
     }}>{children}</ProductContext.Provider>
 }
 

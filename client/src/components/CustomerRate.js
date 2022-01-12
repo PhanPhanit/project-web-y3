@@ -68,7 +68,7 @@ const CustomerRate = () => {
                 <h3 className="title">Customers Review</h3>
                 <div className="filter-review-star">
                     <select>
-                        <option value="0" selected>-- Filter Star --</option>
+                        <option value="0">-- Filter Star --</option>
                         <option value="5">5 stars</option>
                         <option value="4">4 stars</option>
                         <option value="3">3 stars</option>

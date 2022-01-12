@@ -1,51 +1,79 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import {FaShoppingBag} from 'react-icons/fa';
 import '../styles/viewBookDetail.css';
+import {useProductContext} from '../context/product_context';
+import {
+    numberWithCommas,
+    formatMoney,
+} from '../utils/Tools';
+
+
 const ViewBookDetail = () => {
+    const {single_product: {product}} = useProductContext();
+    const {
+        name,
+        image = [],
+        author,
+        published,
+        publisher,
+        language,
+        country,
+        numOfReviews = 0,
+        averageRating,
+        price,
+        discount = 0,
+        genre,
+        description
+    } = product;
+    const [indexImage, setIndexImage] = useState(0);
     return (
         <section id="view-book-header">
             <div className="left">
                 <div className="img-box">
-                    <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SL1000_.jpg" alt="1" />
-                    <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SL1000_.jpg" alt="2" />
-                    <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SL1000_.jpg" alt="3" />
+                    {
+                        image.map((singleImage, index)=>{
+                            return (
+                                <img key={index} className={index===indexImage?"active":""} src={singleImage} onClick={()=>setIndexImage(index)} alt={singleImage} />
+                            )
+                        })
+                    }
                 </div>
-                <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SL1000_.jpg" alt="harry potter" className="big-img" />
+                <img src={image[indexImage]} alt={image[indexImage]} className="big-img" />
             </div>
             <div className="right">
                 <div className="title">
-                    <h2>Yuri Herrera dsfwefwef  wefwe fwe wef wef fwef wf ewfewe wfwewe wefew wefew wef  wefwefwefew</h2>
+                    <h2>{name}</h2>
                 </div>
-                <span>Date: August 14, 2021</span>
-                <span className="subtitle">Author: Transi Ated</span>
-                <span className="subtitle">Publisher: Jim Dale (Narrator), Pottermore Publishing</span>
+                <span>Date: {published}</span>
+                <span className="subtitle">Author: {author}</span>
+                <span className="subtitle">Publisher: {publisher}</span>
                 <div className="stars-rating">
                     <ReactStars
                         classNames="star-icon"
-                        value={3.7}
+                        value={averageRating}
                         isHalf={true}
                         edit={false}
                     />
-                    <span>1,211 ratings</span>
+                    <span>{numberWithCommas(numOfReviews)} ratings</span>
                 </div>
                 <div className="price">
-                    <h3>Price: $24.99</h3>
-                    <span className="discount">$29.99</span>
+                    <h3>Price: {formatMoney(price - discount)}</h3>
+                    <span className="discount">{discount===0 ? "":formatMoney(discount)}</span>
                 </div>
                 <div className="info-book">
                     <div>
-                        <span>Genre: </span> <h5>Fansty</h5>
+                        <span>Genre: </span> <h5>{genre}</h5>
                     </div>
                     <div>
-                        <span>Country: </span> <h5>Unitex Kingdom</h5>
+                        <span>Country: </span> <h5>{country}</h5>
                     </div>
                     <div>
-                        <span>Language: </span> <h5>Fansty</h5>
+                        <span>Language: </span> <h5>{language}</h5>
                     </div>
                     <div>
-                        <span>Genre: </span> <h5>Fansty</h5>
+                        <span>Published: </span> <h5>{published}</h5>
                     </div>
                 </div>
                 <Link to="/cart" className="btn-add-cart">
@@ -54,7 +82,7 @@ const ViewBookDetail = () => {
             </div>
             <div className="description">
                 <h3>Description</h3>
-                <span>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum lacus mauris, mollis aptent parturient faucibus libero mi ligula sociosqu tristique scelerisque, pretium vel leo vitae at consequat lacinia convallis senectus. Id conubia erat lectus dictum torquent aliquam urna, quam fermentum netus risus venenatis iaculis, sociosqu tellus a sociis placerat et. Urna neque sociis faucibus fusce inceptos massa commodo, libero vivamus justo velit convallis magnis.</span>
+                <span>{description}</span>
             </div>
         </section>
     )

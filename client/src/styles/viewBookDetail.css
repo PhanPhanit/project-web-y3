@@ -54,6 +54,9 @@
     cursor: pointer;
     transition: 0.3s;
 }
+#view-book-header .left .img-box img.active{
+    outline: 2px solid var(--color-primary);
+}
 #view-book-header .left .img-box img:hover{
     transform: scale(1.1);
 }

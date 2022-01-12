@@ -34,7 +34,10 @@ const Signin = () => {
             toast.success("Sign in successfully!")
             navigate('/')
         } catch (error) {
-            toast.error("Email or password is not correct!")
+            if(error.response){
+                const {msg} = error.response.data;
+                toast.error(msg)
+            }
             removeUser();
         }
         setLoading(false);
