@@ -16,7 +16,10 @@ import {
     SET_SINGLE_PRODUCT,
     SET_LOADING_SUGGESTION_PRODUCT,
     SET_SUGGESTION_PRODUCT,
-    SET_SUGGESTION_PRODUCT_ERROR
+    SET_SUGGESTION_PRODUCT_ERROR,
+    SET_LOADING_PEOPLE_LOOKING_PRODUCT,
+    SET_PEOPLE_LOOKING_PRODUCT,
+    SET_PEOPLE_LOOKING_PRODUCT_ERROR
 } from '../action';
 
 const initailState = {
@@ -94,7 +97,7 @@ const ProductProvider = ({children}) => {
             dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
         }
     }
-
+    // Fetch suggestion product
     const fetchSuggestionProduct = async (url) => {
         dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: true})
         try {
@@ -106,8 +109,17 @@ const ProductProvider = ({children}) => {
         }
         dispatch({type: SET_LOADING_SUGGESTION_PRODUCT, payload: false})
     }
+    // Fetch people looking product
     const fetchPeopleLookingProduct = async (url) => {
-        console.log("fetch people looking product");
+        dispatch({type: SET_LOADING_PEOPLE_LOOKING_PRODUCT, payload: true});
+        try {
+            const {data: {product}} = await axios.get(url);
+            dispatch({type: SET_PEOPLE_LOOKING_PRODUCT, payload: product});
+            dispatch({type: SET_PEOPLE_LOOKING_PRODUCT_ERROR, payload: false});
+        } catch (error) {
+            dispatch({type: SET_PEOPLE_LOOKING_PRODUCT_ERROR, payload: true});
+        }
+        dispatch({type: SET_LOADING_PEOPLE_LOOKING_PRODUCT, payload: false});
     }
 
     const setNewArrivalPage = (page) => {
@@ -117,9 +129,9 @@ const ProductProvider = ({children}) => {
     useEffect(()=>{
         let url = "";
         if(category_id){
-            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&category=${category_id}`;
+            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&category=${category_id}&sort=-createdAt`;
         }else{
-            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}`;
+            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&sort=-createdAt`;
         }
         fetchProductAllFavorBook(url);
     }, [state.all_favorit_book.current_page, category_id]);

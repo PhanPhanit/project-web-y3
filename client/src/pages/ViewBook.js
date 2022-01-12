@@ -18,6 +18,8 @@ function ViewBook() {
             loading,
             error
         },
+        suggestion_product,
+        people_looking_product
     } = useProductContext();
     useEffect(()=>{
         window.scroll({
@@ -40,9 +42,9 @@ function ViewBook() {
         <>
             <ViewBookDetail />
             <ViewBookSectionTitle title="Suggestion" />
-            <ViewBookSlide />
+            <ViewBookSlide {...suggestion_product} />
             <ViewBookSectionTitle title="People also looking for" />
-            <ViewBookSlide />
+            <ViewBookSlide {...people_looking_product} />
             <CustomerRate />
         </>
     )

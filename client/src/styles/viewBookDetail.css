@@ -105,6 +105,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
 }
 @media screen and (max-width: 1200px){
     #view-book-header .right{
@@ -124,10 +125,10 @@
     gap: 8px;
 }
 #view-book-header .right .title h2{
-    font-size: 28px;
+    font-size: 40px;
 }
 #view-book-header .right > span{
-    font-size: 16px;
+    font-size: 18px;
     opacity: 0.8;
 }
 #view-book-header .right .stars-rating{

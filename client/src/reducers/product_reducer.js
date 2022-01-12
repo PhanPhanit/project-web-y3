@@ -11,7 +11,10 @@ import {
     SET_SINGLE_PRODUCT,
     SET_LOADING_SUGGESTION_PRODUCT,
     SET_SUGGESTION_PRODUCT,
-    SET_SUGGESTION_PRODUCT_ERROR
+    SET_SUGGESTION_PRODUCT_ERROR,
+    SET_LOADING_PEOPLE_LOOKING_PRODUCT,
+    SET_PEOPLE_LOOKING_PRODUCT,
+    SET_PEOPLE_LOOKING_PRODUCT_ERROR
 } from '../action';
 const product_reducer = (state, action) => {
     if(action.type===NEW_ARRIVAL_SET_ERROR){
@@ -99,6 +102,33 @@ const product_reducer = (state, action) => {
             ...state,
             suggestion_product: {
                 ...state.suggestion_product,
+                product: action.payload
+            }
+        }
+    }
+    if(action.type === SET_LOADING_PEOPLE_LOOKING_PRODUCT){
+        return {
+            ...state,
+            people_looking_product: {
+                ...state.people_looking_product,
+                loading: action.payload
+            }
+        }
+    }
+    if(action.type === SET_PEOPLE_LOOKING_PRODUCT_ERROR){
+        return {
+            ...state,
+            people_looking_product: {
+                ...state.people_looking_product,
+                error: action.payload
+            }
+        }
+    }
+    if(action.type === SET_PEOPLE_LOOKING_PRODUCT){
+        return {
+            ...state,
+            people_looking_product: {
+                ...state.people_looking_product,
                 product: action.payload
             }
         }
