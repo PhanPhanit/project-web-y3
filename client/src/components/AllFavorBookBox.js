@@ -24,7 +24,7 @@ const AllFavorBookBox = (props) => {
                 </Link>
                 <div className="info">
                     <h4 className="title">
-                        <Link to={`/viewbook/${productId}`} className="link-none font-title">{sortName(name, 45)}</Link>
+                        <Link to={`/viewbook/${productId}`} className="link-none font-title">{sortName(name, 40)}</Link>
                     </h4>
                     <span className="author">{author}</span>
                     <div className="sold-dis">
@@ -40,7 +40,7 @@ const AllFavorBookBox = (props) => {
                                 value={averageRating}
                                 isHalf={true}
                                 edit={false}
-                                />
+                            />
                             <span>{numberWithCommas(numOfReviews)}</span>
                         </div>
                         <div className="price">{formatMoney(price)}</div>

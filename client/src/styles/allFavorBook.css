@@ -1,44 +1,47 @@
 /* wraper */
 .all-favor-book{
+    background-color: white;
     padding: 20px 25px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+   
 }
 .all-favor-book .favor-box{
+    border-radius: 10px;
     padding: 5px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    height: 550px;
+    -webkit-box-shadow: 0px 1px 3px 1px rgba(117,117,117,0.27);
+    -moz-box-shadow: 0px 1px 3px 1px rgba(117,117,117,0.27);
+    box-shadow: 0px 1px 3px 1px rgba(117,117,117,0.27);
+    height: 510px;
     display: flex;
     flex-direction: column;
 }
-@media screen and (max-width: 1340px) {
-    .all-favor-book{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
+
 @media screen and (max-width: 1100px) {
     .all-favor-book{
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 864px) {
     .all-favor-book{
         grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        margin: 50px;
     }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 643px) {
     .all-favor-book{
         grid-template-columns: 1fr;
+        margin: 100px;
     }
 }
 /* images */
 .all-favor-book .favor-box img{
     width: 100%;
-    height: 300px;
-    /* object-fit: contain; */
+    height: 270px;
+    border-radius: 10px;
+ 
 }
 /* into */
 .all-favor-book .favor-box .info{
@@ -122,22 +125,31 @@
     display: flex;
     justify-content: center;
 }
+
+
 .all-favor-book .favor-box .info .add-cart .btn-add-cart{
     background: var(--color-primary);
     color: var(--color-white);
     font-size: 14px;
     font-weight: bold;
     padding: 8px 17px;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 865px) {
+    .all-favor-book .favor-box .info .add-cart .btn-add-cart{
+        font-size: 12px;
+    }
+}
+
 .all-favor-book .favor-box .info .add-cart .btn-add-cart:hover{
     opacity: 0.8;
 }
 .all-favor-book .favor-box .info .add-cart .btn-add-cart .icon{
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 5px;
 }
 .all-favor-book .favor-box .info .add-cart .btn-add-cart span{

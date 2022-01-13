@@ -126,17 +126,19 @@ const ProductProvider = ({children}) => {
         dispatch({type: SET_NEW_ARRIVAL_PAGE, payload: page});
     }
 
-    useEffect(()=>{
+    useEffect(()=> {
+
         let url = "";
-        if(category_id){
-            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&category=${category_id}&sort=-createdAt`;
-        }else{
-            url = `/api/v1/product?limit=15&page=${state.all_favorit_book.current_page}&sort=-createdAt`;
+        if(category_id) {
+            url = `/api/v1/product?limit=20&page=${state.all_favorit_book.current_page}&category=${category_id}&sort=-createdAt`;
+        }else {
+            url = `/api/v1/product?limit=20&page=${state.all_favorit_book.current_page}&sort=-createdAt`;
         }
+
         fetchProductAllFavorBook(url);
     }, [state.all_favorit_book.current_page, category_id]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchProductNewArrive();
     }, []);
 
