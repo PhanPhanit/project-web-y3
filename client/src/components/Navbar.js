@@ -28,7 +28,7 @@ function Navbar() {
     return (
         <header>
             {/* Header */}
-            <div className="wrapper-global wrapper-menu font-khmer">
+            <div className="wrapper-global wrapper-menu font-khmer font-poppin">
                 <div className="left-menu">
                     <div className="logo">
                         <Link to="/"><font>W</font><font>s</font><font>book</font> </Link>

@@ -93,10 +93,10 @@ header .left-menu .frm-search div input{
     color: var(--color-text);
     opacity: 1;
 }
-header .frm-search div input:focus {
+header .left-menu .frm-search div input:focus {
     border-color: var(--color-primary);
 }
-header .frm-search div button{
+header .left-menu .frm-search div button{
     border: none;
     outline: none;
     position: absolute;
@@ -105,13 +105,13 @@ header .frm-search div button{
     transform: translateY(-50%);
     background: none;
 }
-header .frm-search div .icon{
+header .left-menu .frm-search div .icon{
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.5);
     font-weight: 700;
     cursor: pointer;
 }
-header .frm-search div input:focus ~ button .icon{
+header .left-menu .frm-search div input:focus ~ button .icon{
     color: var(--color-primary);
 }
 

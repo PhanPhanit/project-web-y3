@@ -31,7 +31,7 @@ const Slider = () => {
         );
     }
     return (
-        <section className="section-slide">
+        <section className="section-slide font-poppin">
             <Swiper
                 className="slide-wrapper"
                 spaceBetween={50}
@@ -75,7 +75,7 @@ const Slider = () => {
                         <Link className="btn link-btn" to="/products/:id">Shop Now</Link>
                     </div>
                     <div className="right">
-                        <img src="https://m.media-amazon.com/images/I/51pSIZasHAL.jpg" alt="Photo Book" />
+                        <img src="https://covers.zlibcdn2.com/covers299/books/d6/c0/c9/d6c0c90690c750e1d17819b48c49ee0f.jpg" alt="Photo Book" />
                     </div>
                 </SwiperSlide> */}
             </Swiper>
