@@ -204,7 +204,7 @@ header .center-menu ul{
 
  @media screen and (max-width: 1040px){
     header .center-menu ul li a{
-        font-size: 18px;
+        font-size: 16px;
     }
     header .center-menu ul li{
         padding: 15px 15px;

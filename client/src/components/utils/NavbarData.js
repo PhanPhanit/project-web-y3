@@ -6,7 +6,7 @@ export const NavbarData = [
     },
     {
         id: 2,
-        title: 'Genre',
+        title: 'Languages',
         link: 'dropbox'
     },
     {
