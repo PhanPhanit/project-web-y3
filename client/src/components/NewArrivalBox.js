@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import {FaShoppingBag} from 'react-icons/fa';
 import {MdOutlineSell} from 'react-icons/md';
 import 'swiper/swiper-bundle.min.css'
@@ -12,7 +12,7 @@ import {useProductContext} from '../context/product_context';
 import {formatMoney, numberWithCommas} from '../utils/Tools';
 
 const NewArrivalBox = () => {
-    SwiperCore.use([Autoplay]);
+    SwiperCore.use([Autoplay, Pagination]);
     const {new_arrival: {
         product_new_arrival,
         loading,
@@ -30,8 +30,7 @@ const NewArrivalBox = () => {
                     speed={1000}
                     spaceBetween={30}
                     slidesPerView={1}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
+                    pagination={true}
                     loop={true}
                     autoplay={{
                         delay: 3000,

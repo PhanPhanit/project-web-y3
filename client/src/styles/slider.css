@@ -171,3 +171,7 @@
 }
 
 /* end right box */
+/* slide loading */
+.section-slide.slide-banner-loading{
+    background: #FFF;
+}

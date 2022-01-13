@@ -92,6 +92,9 @@ const ProductProvider = ({children}) => {
             // fetch suggestion product and people looking
             fetchSuggestionProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-sold`);
             fetchPeopleLookingProduct(`/api/v1/product?limit=15&category=${product.category}&sort=-views`);
+            // increase view
+            const productId = product._id;
+            await axios.get(`/api/v1/product/increase-view/${productId}`);
         } catch (error) {
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: true});
             dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})

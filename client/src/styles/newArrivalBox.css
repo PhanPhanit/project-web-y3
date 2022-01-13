@@ -8,6 +8,17 @@
 .wrapper-arrive .swiper-arrive{
     width: 100%;
     padding: 10px;
+    height: 600px;
+}
+.wrapper-arrive .swiper-arrive .swiper-pagination{
+    bottom: 0;
+}
+.wrapper-arrive .swiper-arrive .swiper-pagination-bullet{
+    height: 10px;
+    width: 10px;
+}
+.wrapper-arrive .swiper-arrive .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: var(--color-primary);
 }
 .wrapper-arrive .box-arrive{
     padding: 5px;

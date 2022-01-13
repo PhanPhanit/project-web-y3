@@ -6,16 +6,19 @@ import {ActionProvider} from './context/action_context';
 import {UserProvider} from './context/user_context';
 import {CategoryProvider} from './context/category_context';
 import {ProductProvider} from './context/product_context';
+import {SlideBannerProvider} from './context/slide_banner_context';
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <ActionProvider>
-        <CategoryProvider>
-          <ProductProvider>
-            <App />
-          </ProductProvider>
-        </CategoryProvider>
+        <SlideBannerProvider>
+          <CategoryProvider>
+            <ProductProvider>
+              <App />
+            </ProductProvider>
+          </CategoryProvider>
+        </SlideBannerProvider>
       </ActionProvider>
     </UserProvider>
   </React.StrictMode>,
