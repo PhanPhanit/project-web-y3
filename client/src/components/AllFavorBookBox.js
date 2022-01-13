@@ -20,7 +20,9 @@ const AllFavorBookBox = (props) => {
     return (
         <div className="favor-box">
                 <Link to={`/viewbook/${productId}`}>
-                    <img src={image[0]} alt={name} />
+                    <div className="img-box">
+                        <img src={image[0]} alt={name} />
+                    </div>
                 </Link>
                 <div className="info">
                     <h4 className="title">

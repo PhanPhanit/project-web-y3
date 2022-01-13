@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import Finance from '../images/finance.svg';
 import '../styles/categorySection.css';
 import {useCategoryContext} from '../context/category_context';
 

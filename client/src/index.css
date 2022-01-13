@@ -120,8 +120,8 @@ a{
   background: #F5F7F6;
 }
 .app-loading img{
-  width: 80%;
-  height: 80%;
+  max-width: 500px;
+  max-height: 500px;
   object-fit: cover;
 }
 

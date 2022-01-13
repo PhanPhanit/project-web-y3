@@ -14,7 +14,7 @@ const Slider = () => {
         slide_banner_loading: loading,
         slide_banner_error: error
     } = useSlideBanner();
-    if(true){
+    if(false){
         return (
             <div className="section-slide slide-banner-loading">
                 <div className="left">

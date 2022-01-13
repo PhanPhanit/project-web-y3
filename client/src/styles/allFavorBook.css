@@ -32,16 +32,30 @@
 }
 @media screen and (max-width: 643px) {
     .all-favor-book{
-        grid-template-columns: 1fr;
-        margin: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+    .favor-box{
+        max-width: 250px;
+        width: 100%;
     }
 }
 /* images */
-.all-favor-book .favor-box img{
+.all-favor-book .favor-box .img-box{
     width: 100%;
     height: 270px;
+    overflow: hidden;
     border-radius: 10px;
- 
+}
+.all-favor-book .favor-box .img-box img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+.all-favor-book .favor-box .img-box:hover img{
+    transform: scale(1.08);
 }
 /* into */
 .all-favor-book .favor-box .info{
