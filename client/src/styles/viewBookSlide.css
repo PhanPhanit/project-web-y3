@@ -15,9 +15,9 @@
 .view-book-slide .box-arrive{
     padding: 5px;
     height: 480px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
+    box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
 }
 /* images */
 .view-book-slide .box-arrive img{

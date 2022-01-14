@@ -25,6 +25,18 @@ header .center-menu{
     flex-grow: 1;
 }
 /* logo */
+header .logo {
+    padding: 0 10px;
+}
+header .logo:hover {
+    border-radius: 10px;
+}
+
+header .logo:active {
+    background-color: rgb(245, 245, 245);
+    transition: .1s ease-in;
+}
+
 header .logo font:nth-child(1){
     color: var(--color-primary);
     font-size: 2.8rem;
@@ -159,29 +171,16 @@ header .center-menu ul{
     left: 50%;
     background: var(--color-dropbox);
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 8px;
     transform: translateX(-50%);
  }
  header .center-menu ul li.m-hover:hover .dropbox{
     display: flex;
  }
- header .dropbox .arrow-top,
- header .right-menu .user-icon .user-hower .arrow-top
- {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -98%);
-    width: 10px;
-    height: 10px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid var(--color-dropbox);
-    border-top: 18px solid transparent;
- }
+
  header .center-menu .dropbox span{
      cursor: pointer;
-     padding: 10px 10px;
+     padding: 10px 25px;
      color: var(--color-white);
  }
  header .center-menu .dropbox span:hover{
@@ -276,7 +275,7 @@ header .right-menu .btn-menu:hover{
 
 header .right-menu .user-icon .user-hower{
     position: absolute;
-    top: 130%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     display: none;
@@ -313,7 +312,7 @@ header .right-menu .user-hower .body{
     font-size: 1.1rem;
 }
 header .right-menu .user-hower .body .link{
-    margin-top: 15px 0;
+    margin-top: 10px 0;
     transition: 0.2s;
     color: var(--color-white);
 }
