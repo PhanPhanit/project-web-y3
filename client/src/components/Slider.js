@@ -14,15 +14,17 @@ const Slider = () => {
         slide_banner_loading: loading,
         slide_banner_error: error
     } = useSlideBanner();
-    if(false){
+    if(loading){
         return (
             <div className="section-slide slide-banner-loading">
                 <div className="left">
-                    <div className="loading-line1"></div>
-                    <div className="loading-line2"></div>
-                    <span className="sub-line1"></span>
-                    <span className="sub-line2"></span>
-                    <div className="loading-btn"></div>
+                    <div className="sub-left">
+                        <div className="loading-line1"></div>
+                        <div className="loading-line2"></div>
+                        <span className="sub-line1"></span>
+                        <span className="sub-line2"></span>
+                        <div className="loading-btn"></div>
+                    </div>
                 </div>
                 <div className="right">
                     <div className="img"></div>
