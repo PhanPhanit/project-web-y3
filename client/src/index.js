@@ -7,6 +7,8 @@ import {UserProvider} from './context/user_context';
 import {CategoryProvider} from './context/category_context';
 import {ProductProvider} from './context/product_context';
 import {SlideBannerProvider} from './context/slide_banner_context';
+import {CartProvider} from './context/cart_context';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +17,9 @@ ReactDOM.render(
         <SlideBannerProvider>
           <CategoryProvider>
             <ProductProvider>
-              <App />
+              <CartProvider>
+                <App />
+              </CartProvider>
             </ProductProvider>
           </CategoryProvider>
         </SlideBannerProvider>

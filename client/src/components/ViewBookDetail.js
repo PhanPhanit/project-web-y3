@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import {FaShoppingBag} from 'react-icons/fa';
 import '../styles/viewBookDetail.css';
+import {useUserContext} from '../context/user_context';
 import {useProductContext} from '../context/product_context';
+import {useCartContext} from '../context/cart_context';
 import {
     numberWithCommas,
     formatMoney,
@@ -11,7 +13,9 @@ import {
 
 
 const ViewBookDetail = () => {
+    const {myUser} = useUserContext();
     const {single_product: {product}} = useProductContext();
+    const {addToCart} = useCartContext();
     const {
         name,
         image = [],
@@ -76,9 +80,17 @@ const ViewBookDetail = () => {
                         <span>Published: </span> <h5>{published}</h5>
                     </div>
                 </div>
-                <Link to="/cart" className="btn-add-cart">
-                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                </Link>
+                {
+                    myUser? (
+                        <Link to="/cart" className="btn-add-cart" onClick={()=>addToCart(product)}>
+                            <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                        </Link>
+                    ):(
+                        <Link to="/signin" className="btn-add-cart">
+                            <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                        </Link>
+                    )
+                }
             </div>
             <div className="description">
                 <h3>Description</h3>

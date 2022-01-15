@@ -4,8 +4,12 @@ import {MdOutlineSell} from 'react-icons/md';
 import {FaShoppingBag} from 'react-icons/fa';
 import ReactStars from "react-rating-stars-component";
 import {sortName, formatMoney, numberWithCommas} from '../utils/Tools';
+import {useUserContext} from '../context/user_context';
+import {useCartContext} from '../context/cart_context';
 
 const AllFavorBookBox = (props) => {
+    const {myUser} = useUserContext();
+    const {addToCart} = useCartContext();
     const {
         _id: productId,
         name,
@@ -48,9 +52,17 @@ const AllFavorBookBox = (props) => {
                         <div className="price">{formatMoney(price)}</div>
                     </div>
                     <div className="add-cart">
-                        <Link to="/cart" className="btn-add-cart">
-                            <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                        </Link>
+                        {
+                            myUser? (
+                                <Link to="/cart" className="btn-add-cart" onClick={()=>addToCart(props)}>
+                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                                </Link>
+                            ):(
+                                <Link to="/signin" className="btn-add-cart">
+                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                                </Link>
+                            )
+                        }
                     </div>
                 </div>
             </div>

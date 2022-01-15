@@ -9,15 +9,19 @@ import 'swiper/swiper.min.css'
 import ReactStars from "react-rating-stars-component";
 import '../styles/newArrivalBox.css'
 import {useProductContext} from '../context/product_context';
+import {useUserContext} from '../context/user_context';
+import {useCartContext} from '../context/cart_context';
 import {formatMoney, numberWithCommas} from '../utils/Tools';
 
 const NewArrivalBox = () => {
     SwiperCore.use([Autoplay, Pagination]);
+    const {myUser} = useUserContext();
     const {new_arrival: {
         product_new_arrival,
         loading,
         error
     }} = useProductContext();
+    const {addToCart} = useCartContext();
     return (
         <section className="section-white">
             <div className="wrapper-global wrapper-arrive">
@@ -103,9 +107,17 @@ const NewArrivalBox = () => {
                                                 <div className="price">{formatMoney(price - discount)}</div>
                                             </div>
                                             <div className="add-cart">
-                                                <Link to="/cart" className="btn-add-cart">
-                                                    <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
-                                                </Link>
+                                                {
+                                                    myUser? (
+                                                        <Link to="/cart" className="btn-add-cart" onClick={()=>addToCart(item)}>
+                                                            <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                                                        </Link>
+                                                    ):(
+                                                        <Link to="/signin" className="btn-add-cart">
+                                                            <FaShoppingBag className="icon" /> <span>ADD TO CART</span>
+                                                        </Link>
+                                                    )
+                                                }
                                             </div>
                                         </div>
                                     </SwiperSlide>

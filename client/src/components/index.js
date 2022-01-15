@@ -45,5 +45,5 @@ export {
     Feedback,
     Checkout,
     SendToken,
-    PrivateRoute
+    PrivateRoute,
 }

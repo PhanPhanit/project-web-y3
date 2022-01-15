@@ -8,6 +8,7 @@ import {NavbarData} from './utils/NavbarData';
 import {Link as LinkScroll} from 'react-scroll';
 import {useActionContext} from '../context/action_context'
 import {useUserContext} from '../context/user_context';
+import {useCartContext} from '../context/cart_context';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 
@@ -15,6 +16,7 @@ function Navbar() {
     const navigate = useNavigate();
     const {myUser, removeUser} = useUserContext();
     const {openSidebar, accountSettingClick, historyClick} = useActionContext();
+    const {total_items} = useCartContext();
     const handleLogout = async () => {
         try {
             await axios.get('/api/v1/auth/logout');
@@ -125,7 +127,7 @@ function Navbar() {
                                 <li className="li-cart">
                                     <Link className="link-cart" to="/cart">
                                         <AiOutlineShopping />
-                                        <span>0</span>
+                                        <span>{total_items}</span>
                                     </Link>
                                 </li>
                             )
